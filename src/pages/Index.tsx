@@ -1,7 +1,18 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { ContactModal } from "@/components/ContactModal";
 
 const Index = () => {
+  const [modalType, setModalType] = useState<"consultation" | "contact" | "demo" | null>(null);
+
+  const openModal = (type: "consultation" | "contact" | "demo") => {
+    setModalType(type);
+  };
+
+  const closeModal = () => {
+    setModalType(null);
+  };
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary">
       {/* Header */}
@@ -18,7 +29,7 @@ const Index = () => {
             <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
             <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
-            <Button>Get Started</Button>
+            <Button onClick={() => openModal("contact")}>Get Started</Button>
           </div>
         </nav>
       </header>
@@ -33,11 +44,11 @@ const Index = () => {
           Specialized in Transformers, RAG architectures, and real-time inference optimization.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="text-lg px-8 py-6">
+          <Button size="lg" className="text-lg px-8 py-6" onClick={() => openModal("consultation")}>
             Schedule Consultation
           </Button>
-          <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-            Learn More
+          <Button variant="outline" size="lg" className="text-lg px-8 py-6" onClick={() => openModal("demo")}>
+            Request Demo
           </Button>
         </div>
       </section>
@@ -196,10 +207,16 @@ const Index = () => {
           Enterprise-ready MLOps pipelines, production-grade LLM deployments, and scalable vector search. 
           Let our ML engineers architect your next-generation AI platform with enterprise SLAs and compliance.
         </p>
-        <Button size="lg" className="text-lg px-8 py-6">
+        <Button size="lg" className="text-lg px-8 py-6" onClick={() => openModal("contact")}>
           Discuss Technical Requirements
         </Button>
       </section>
+
+      <ContactModal 
+        isOpen={modalType !== null} 
+        onClose={closeModal} 
+        type={modalType || "contact"} 
+      />
 
       {/* Footer */}
       <footer className="bg-card border-t py-12">
