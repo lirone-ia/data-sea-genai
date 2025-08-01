@@ -9,7 +9,7 @@ const Index = () => {
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/26626dc7-368f-4a72-9aae-b8a995bd5e81.png" 
+              src="/lovable-uploads/502f36c9-283c-4022-8de7-8585625012a9.png" 
               alt="DataSea Logo" 
               className="h-12 w-auto"
             />
@@ -49,7 +49,9 @@ const Index = () => {
           <Card className="border-2 hover:border-primary transition-colors">
             <CardContent className="p-8">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-2xl">📊</span>
+                <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M3 3h18v2H3zm0 4h18v2H3zm0 4h18v2H3zm0 4h12v2H3z"/>
+                </svg>
               </div>
               <h3 className="text-xl font-bold mb-4">Salesforce & Data Integration</h3>
               <p className="text-muted-foreground text-sm">
@@ -62,7 +64,9 @@ const Index = () => {
           <Card className="border-2 hover:border-primary transition-colors">
             <CardContent className="p-8">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-2xl">🔊</span>
+                <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
               </div>
               <h3 className="text-xl font-bold mb-4">Voice Analytics & NLP</h3>
               <p className="text-muted-foreground text-sm">
@@ -75,7 +79,9 @@ const Index = () => {
           <Card className="border-2 hover:border-primary transition-colors">
             <CardContent className="p-8">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-2xl">🎯</span>
+                <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
               </div>
               <h3 className="text-xl font-bold mb-4">ML Segmentation & CLV</h3>
               <p className="text-muted-foreground text-sm">
@@ -88,7 +94,9 @@ const Index = () => {
           <Card className="border-2 hover:border-primary transition-colors">
             <CardContent className="p-8">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-2xl">☁️</span>
+                <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+                </svg>
               </div>
               <h3 className="text-xl font-bold mb-4">GCP Data Engineering</h3>
               <p className="text-muted-foreground text-sm">
@@ -101,7 +109,9 @@ const Index = () => {
           <Card className="border-2 hover:border-primary transition-colors">
             <CardContent className="p-8">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-2xl">🧠</span>
+                <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 12.5c0 .83-.67 1.5-1.5 1.5S14 16.33 14 15.5 14.67 14 15.5 14s1.5.67 1.5 1.5zm2-5c0 .83-.67 1.5-1.5 1.5S16 11.33 16 10.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5z"/>
+                </svg>
               </div>
               <h3 className="text-xl font-bold mb-4">LLM & RAG Systems</h3>
               <p className="text-muted-foreground text-sm">
@@ -114,7 +124,9 @@ const Index = () => {
           <Card className="border-2 hover:border-primary transition-colors">
             <CardContent className="p-8">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-2xl">⚙️</span>
+                <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                </svg>
               </div>
               <h3 className="text-xl font-bold mb-4">MLOps & Infrastructure</h3>
               <p className="text-muted-foreground text-sm">
@@ -195,7 +207,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
               <img 
-                src="/lovable-uploads/26626dc7-368f-4a72-9aae-b8a995bd5e81.png" 
+                src="/lovable-uploads/502f36c9-283c-4022-8de7-8585625012a9.png" 
                 alt="DataSea Logo" 
                 className="h-8 w-auto"
               />
