@@ -27,7 +27,7 @@ const Index = () => {
           </div>
           <div className="hidden md:flex items-center space-x-8">
             <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
+            <a href="/technologies" className="text-foreground hover:text-primary transition-colors">Technologies</a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
             <Button onClick={() => openModal("contact")}>Get Started</Button>
           </div>
@@ -149,54 +149,34 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Technologies Section */}
+      {/* Technologies Preview */}
       <section className="bg-secondary/50 py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16">Multi-Cloud Architecture & Tech Stack</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold mb-8">Our Technology Stack</h2>
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            Multi-cloud architecture with cutting-edge ML frameworks and orchestration tools
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             <div className="space-y-2">
               <div className="text-2xl font-bold text-primary">AWS</div>
-              <p className="text-xs text-muted-foreground">SageMaker, Lambda, EKS</p>
+              <p className="text-xs text-muted-foreground">SageMaker, Lambda</p>
             </div>
             <div className="space-y-2">
               <div className="text-2xl font-bold text-primary">Azure</div>
-              <p className="text-xs text-muted-foreground">ML Studio, AKS, Functions</p>
+              <p className="text-xs text-muted-foreground">ML Studio, AKS</p>
             </div>
             <div className="space-y-2">
               <div className="text-2xl font-bold text-primary">GCP</div>
-              <p className="text-xs text-muted-foreground">Vertex AI, BigQuery, GKE</p>
+              <p className="text-xs text-muted-foreground">Vertex AI, BigQuery</p>
             </div>
             <div className="space-y-2">
               <div className="text-2xl font-bold text-primary">PyTorch</div>
               <p className="text-xs text-muted-foreground">Transformers, CUDA</p>
             </div>
-            <div className="space-y-2">
-              <div className="text-2xl font-bold text-primary">TensorFlow</div>
-              <p className="text-xs text-muted-foreground">TFX, Serving, Lite</p>
-            </div>
-            <div className="space-y-2">
-              <div className="text-2xl font-bold text-primary">Kubernetes</div>
-              <p className="text-xs text-muted-foreground">Helm, Istio, Operators</p>
-            </div>
           </div>
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="space-y-2">
-              <div className="text-xl font-bold text-accent">Apache Kafka</div>
-              <p className="text-xs text-muted-foreground">Stream processing</p>
-            </div>
-            <div className="space-y-2">
-              <div className="text-xl font-bold text-accent">Apache Airflow</div>
-              <p className="text-xs text-muted-foreground">Workflow orchestration</p>
-            </div>
-            <div className="space-y-2">
-              <div className="text-xl font-bold text-accent">MLflow</div>
-              <p className="text-xs text-muted-foreground">Experiment tracking</p>
-            </div>
-            <div className="space-y-2">
-              <div className="text-xl font-bold text-accent">Ray</div>
-              <p className="text-xs text-muted-foreground">Distributed training</p>
-            </div>
-          </div>
+          <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+            <a href="/technologies" className="no-underline">View Full Tech Stack</a>
+          </Button>
         </div>
       </section>
 
