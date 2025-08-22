@@ -2,11 +2,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ContactModal } from "@/components/ContactModal";
 
 const Industries = () => {
   const [modalType, setModalType] = useState<"consultation" | "contact" | "demo" | null>(null);
+
+  useEffect(() => {
+    document.title = "Industries | Banking, Cosmetics/Retail, Automotive — DataSea";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'AI platforms for Banking, Cosmetics/Retail, and Automotive: use cases, enablers, and measurable outcomes with security and governance best practices.');
+    }
+  }, []);
 
   const openModal = (type: "consultation" | "contact" | "demo") => {
     setModalType(type);
@@ -26,7 +34,7 @@ const Industries = () => {
           Industries
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto">
-          We work with leading French enterprises across <strong>Banking</strong>, <strong>Cosmetics/Retail</strong>, and <strong>Automotive/Manufacturing</strong>.
+          We partner with leading French enterprises across Banking, Cosmetics/Retail, and Automotive/Manufacturing—designing AI platforms that are measurable, governable, and production-ready.
         </p>
       </section>
 
@@ -45,18 +53,35 @@ const Industries = () => {
               <div className="mb-6">
                 <h4 className="font-semibold mb-2 text-primary">Use cases:</h4>
                 <ul className="space-y-1 text-muted-foreground text-sm">
-                  <li>• KYC/AML analytics</li>
-                  <li>• Risk scoring</li>
-                  <li>• Fraud detection</li>
-                  <li>• Customer 360</li>
-                  <li>• Advisory copilots</li>
+                  <li>• KYC/AML analytics and adverse media screening</li>
+                  <li>• Risk scoring and credit decisioning</li>
+                  <li>• Fraud detection (card, account takeover, payments)</li>
+                  <li>• Customer 360 and next-best-action</li>
+                  <li>• Advisory copilots for relationship managers</li>
+                </ul>
+              </div>
+              
+              <div className="mb-6">
+                <h4 className="font-semibold mb-2 text-primary">Typical data & enablers:</h4>
+                <ul className="space-y-1 text-muted-foreground text-sm">
+                  <li>• Core banking + payments events, bureau data, PEP/sanctions lists</li>
+                  <li>• Streaming features, entity resolution, explainable models, policy enforcement</li>
+                </ul>
+              </div>
+              
+              <div className="mb-6">
+                <h4 className="font-semibold mb-2 text-primary">Outcomes & target KPIs:</h4>
+                <ul className="space-y-1 text-muted-foreground text-sm">
+                  <li>• Faster onboarding (–30–60% time-to-verify)</li>
+                  <li>• Lower false positives in monitoring (–20–40%)</li>
+                  <li>• Improved capital efficiency via better risk segmentation</li>
                 </ul>
               </div>
               
               <div>
-                <h4 className="font-semibold mb-2 text-primary">Outcomes:</h4>
+                <h4 className="font-semibold mb-2 text-primary">Regulatory notes:</h4>
                 <p className="text-muted-foreground text-sm">
-                  Faster onboarding, lower false positives, improved capital efficiency.
+                  GDPR & privacy by design, AML/CFT obligations, model risk governance (policies, auditability)
                 </p>
               </div>
             </CardContent>
@@ -74,18 +99,34 @@ const Industries = () => {
               <div className="mb-6">
                 <h4 className="font-semibold mb-2 text-primary">Use cases:</h4>
                 <ul className="space-y-1 text-muted-foreground text-sm">
-                  <li>• Demand forecasting</li>
-                  <li>• Personalization</li>
-                  <li>• Review mining</li>
-                  <li>• Shelf analytics</li>
-                  <li>• Marketing mix modeling</li>
+                  <li>• Demand forecasting and replenishment</li>
+                  <li>• Personalization and recommendations</li>
+                  <li>• Review mining and VOC analytics</li>
+                  <li>• Shelf/assortment analytics (pricing, promos)</li>
+                  <li>• Marketing mix modeling and incrementality</li>
+                </ul>
+              </div>
+              
+              <div className="mb-6">
+                <h4 className="font-semibold mb-2 text-primary">Typical data & enablers:</h4>
+                <ul className="space-y-1 text-muted-foreground text-sm">
+                  <li>• POS/e-commerce, loyalty/CRM, catalog & reviews, campaign/traffic data</li>
+                  <li>• Feature store, product embeddings, experimentation frameworks</li>
+                </ul>
+              </div>
+              
+              <div className="mb-6">
+                <h4 className="font-semibold mb-2 text-primary">Outcomes & target KPIs:</h4>
+                <ul className="space-y-1 text-muted-foreground text-sm">
+                  <li>• Higher conversion (+5–15%), increased AOV (+3–10%)</li>
+                  <li>• Reduced stockouts (–10–25%), improved forecast accuracy</li>
                 </ul>
               </div>
               
               <div>
-                <h4 className="font-semibold mb-2 text-primary">Outcomes:</h4>
+                <h4 className="font-semibold mb-2 text-primary">Compliance notes:</h4>
                 <p className="text-muted-foreground text-sm">
-                  Higher conversion, reduced stockouts, optimized media spend.
+                  Consent and preference management, data minimization, cookie & tracking governance
                 </p>
               </div>
             </CardContent>
@@ -103,18 +144,34 @@ const Industries = () => {
               <div className="mb-6">
                 <h4 className="font-semibold mb-2 text-primary">Use cases:</h4>
                 <ul className="space-y-1 text-muted-foreground text-sm">
-                  <li>• Predictive maintenance</li>
-                  <li>• Quality inspection</li>
-                  <li>• Digital twins</li>
-                  <li>• Supply chain visibility</li>
-                  <li>• After-sales analytics</li>
+                  <li>• Predictive maintenance on lines and in-field assets</li>
+                  <li>• Quality inspection (vision) and defect classification</li>
+                  <li>• Digital twins and process optimization</li>
+                  <li>• Supply chain visibility and ETA/purchasing analytics</li>
+                  <li>• After-sales analytics and warranty optimization</li>
+                </ul>
+              </div>
+              
+              <div className="mb-6">
+                <h4 className="font-semibold mb-2 text-primary">Typical data & enablers:</h4>
+                <ul className="space-y-1 text-muted-foreground text-sm">
+                  <li>• Sensor/PLC streams, MES/ERP, BOM/parts data, vision pipelines</li>
+                  <li>• Streaming inference, stateful processing, traceability & lineage</li>
+                </ul>
+              </div>
+              
+              <div className="mb-6">
+                <h4 className="font-semibold mb-2 text-primary">Outcomes & target KPIs:</h4>
+                <ul className="space-y-1 text-muted-foreground text-sm">
+                  <li>• Lower downtime (–15–30%), yield improvement (+1–5%)</li>
+                  <li>• Smarter inventory (DOH reduction, better OTIF)</li>
                 </ul>
               </div>
               
               <div>
-                <h4 className="font-semibold mb-2 text-primary">Outcomes:</h4>
+                <h4 className="font-semibold mb-2 text-primary">Operational notes:</h4>
                 <p className="text-muted-foreground text-sm">
-                  Lower downtime, yield improvement, smarter inventory.
+                  Safety & traceability, environment isolation, change control and audit trails
                 </p>
               </div>
             </CardContent>
@@ -127,7 +184,7 @@ const Industries = () => {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Industry?</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Let's discuss how AI can drive measurable outcomes in your specific industry.
+            Let's map your use cases, data assets, and constraints—and design an AI roadmap with clear KPIs and governance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8 py-6" onClick={() => openModal("contact")}>
