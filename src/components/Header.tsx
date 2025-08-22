@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 bg-gradient-to-r from-background/95 via-background/98 to-background/95 backdrop-blur-md z-50 border-b border-primary/20 shadow-lg shadow-primary/5">
+      <header className="fixed top-0 left-0 right-0 bg-gradient-to-r from-slate-900/95 via-slate-800/98 to-slate-900/95 backdrop-blur-md z-50 border-b border-primary/30 shadow-lg shadow-primary/10">
         <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-3 sm:flex w-full sm:w-auto justify-center sm:justify-start">
