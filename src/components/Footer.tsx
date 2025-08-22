@@ -9,7 +9,7 @@ const Footer = () => {
             <img 
               src={logoImage} 
               alt="DataSea - Enterprise AI Solutions" 
-              className="h-16 w-auto object-contain filter drop-shadow-lg"
+              className="h-20 w-auto object-contain filter drop-shadow-lg"
             />
           </div>
           
