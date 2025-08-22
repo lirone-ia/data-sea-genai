@@ -18,16 +18,16 @@ const Header = () => {
     <>
       <header className="container mx-auto px-6 py-8">
         <nav className="flex items-center justify-between">
-          <div className="flex items-center space-x-3 md:flex w-full md:w-auto justify-center md:justify-start">
-            <a href="/" className="flex justify-center w-full md:w-auto">
+          <div className="flex items-center space-x-3 sm:flex w-full sm:w-auto justify-center sm:justify-start">
+            <a href="/" className="flex justify-center w-full sm:w-auto">
               <img 
                 src={logoImage} 
                 alt="DataSea - Enterprise AI Solutions" 
-                className="h-16 md:h-20 w-auto object-contain filter drop-shadow-lg"
+                className="h-16 sm:h-20 w-auto object-contain filter drop-shadow-lg"
               />
             </a>
           </div>
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden sm:flex items-center space-x-4 lg:space-x-8">
             <a href="/services" className="text-foreground hover:text-primary transition-colors">Services</a>
             <a href="/industries" className="text-foreground hover:text-primary transition-colors">Industries</a>
             <a href="/technologies" className="text-foreground hover:text-primary transition-colors">Technologies</a>
