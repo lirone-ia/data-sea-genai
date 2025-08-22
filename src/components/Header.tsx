@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ContactModal } from "@/components/ContactModal";
 import { useState } from "react";
-import logoImage from "@/assets/datasea-logo-clear.png";
 
 const Header = () => {
   const [modalType, setModalType] = useState<"consultation" | "contact" | "demo" | null>(null);
@@ -21,9 +20,10 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             <a href="/">
               <img 
-                src={logoImage} 
+                src="/lovable-uploads/502f36c9-283c-4022-8de7-8585625012a9.png" 
                 alt="DataSea - Enterprise AI Solutions" 
-                className="h-24 w-auto object-contain filter drop-shadow-lg"
+                className="h-24 w-auto object-contain filter drop-shadow-lg bg-background rounded-lg p-2"
+                style={{ backgroundColor: 'hsl(210 100% 4%)' }}
               />
             </a>
           </div>
