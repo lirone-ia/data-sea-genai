@@ -66,13 +66,33 @@ const Contact = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-20 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-          Contact DataSea
-        </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto">
-          Tell us about your use case. An engineer will reply within one business day.
-        </p>
+      <section className="container mx-auto px-6 py-20">
+        <div className="text-center mb-12">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Contact DataSea
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto">
+            Tell us about your use case. An engineer will reply within one business day.
+          </p>
+        </div>
+        
+        <div className="max-w-md mx-auto text-center mb-8">
+          <Card className="border-2">
+            <CardContent className="p-6">
+              <h3 className="text-lg font-semibold mb-4">Office Address</h3>
+              <div className="text-muted-foreground space-y-1">
+                <p><strong>DataSea</strong></p>
+                <p>5 RUE BASSE DES GROUETS</p>
+                <p>41000 BLOIS, France</p>
+                <div className="text-xs mt-4 space-y-1 border-t pt-4">
+                  <p>SIREN: 988 832 507</p>
+                  <p>SIRET: 988 832 507 00012</p>
+                  <p>TVA: FR77988832507</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </section>
 
       {/* Contact Form */}

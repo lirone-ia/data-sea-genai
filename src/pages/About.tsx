@@ -138,13 +138,41 @@ const About = () => {
         </div>
       </section>
 
-      {/* Locations Section */}
+      {/* Locations & Company Info */}
       <section className="container mx-auto px-6 py-20">
-        <h2 className="text-4xl font-bold text-center mb-16">Locations</h2>
-        <div className="text-center max-w-2xl mx-auto">
-          <p className="text-lg text-muted-foreground mb-8">
-            <strong>France</strong> (Île-de-France + regional hubs). Remote-friendly delivery.
-          </p>
+        <h2 className="text-4xl font-bold text-center mb-16">Locations & Company Information</h2>
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+          <Card className="border-2 hover:border-primary transition-colors">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-4">Office Location</h3>
+              <div className="space-y-2 text-muted-foreground">
+                <p><strong>DataSea</strong></p>
+                <p>5 RUE BASSE DES GROUETS</p>
+                <p>41000 BLOIS, France</p>
+                <p className="text-sm mt-4">
+                  France (Île-de-France + regional hubs). Remote-friendly delivery.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+          
+          <Card className="border-2 hover:border-primary transition-colors">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-4">Legal Information</h3>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <p><span className="font-medium">Company Form:</span> SASU (Société par Actions Simplifiée)</p>
+                <p><span className="font-medium">Founded:</span> July 4, 2025</p>
+                <p><span className="font-medium">SIREN:</span> 988 832 507</p>
+                <p><span className="font-medium">SIRET:</span> 988 832 507 00012</p>
+                <p><span className="font-medium">VAT Number:</span> FR77988832507</p>
+                <p><span className="font-medium">NAF Code:</span> 6202A</p>
+                <p><span className="font-medium">Capital:</span> 100€</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+        
+        <div className="text-center">
           <Button size="lg" className="text-lg px-8 py-6" onClick={() => openModal("contact")}>
             Work With Us
           </Button>

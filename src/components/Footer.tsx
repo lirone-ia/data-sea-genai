@@ -41,14 +41,19 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-            © 2025 DataSea. Enterprise AI Solutions.
-          </div>
-          <div className="flex space-x-4">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              LinkedIn
-            </a>
+        <div className="border-t pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div className="text-xs text-muted-foreground space-y-1">
+              <p>© 2025 DataSea. Enterprise AI Solutions.</p>
+              <p>SASU - Capital: 100€ - SIREN: 988 832 507 - SIRET: 988 832 507 00012</p>
+              <p>TVA: FR77988832507 - NAF: 6202A - Conseil en systèmes et logiciels informatiques</p>
+              <p>5 RUE BASSE DES GROUETS, 41000 BLOIS, France</p>
+            </div>
+            <div className="flex space-x-4">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </div>
