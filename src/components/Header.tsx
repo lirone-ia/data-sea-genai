@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ContactModal } from "@/components/ContactModal";
 import { useState } from "react";
-import logoImage from "@/assets/datasea-logo-final.png";
+import logoImage from "@/assets/datasea-logo-sharp.png";
 
 const Header = () => {
   const [modalType, setModalType] = useState<"consultation" | "contact" | "demo" | null>(null);
