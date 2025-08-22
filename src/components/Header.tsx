@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="container mx-auto px-6 py-4 fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm z-50">
+      <header className="container mx-auto px-6 py-8">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-3 sm:flex w-full sm:w-auto justify-center sm:justify-start">
             <a href="/" className="flex justify-center w-full sm:w-auto">
