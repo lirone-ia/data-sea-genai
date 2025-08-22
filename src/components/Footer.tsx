@@ -1,4 +1,4 @@
-import logoImage from "@/assets/datasea-logo-new.png";
+import logoImage from "@/assets/datasea-logo-waves.png";
 
 const Footer = () => {
   return (
