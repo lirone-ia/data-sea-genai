@@ -166,7 +166,6 @@ const About = () => {
                 <p><span className="font-medium">SIRET:</span> 988 832 507 00012</p>
                 <p><span className="font-medium">VAT Number:</span> FR77988832507</p>
                 <p><span className="font-medium">NAF Code:</span> 6202A</p>
-                <p><span className="font-medium">Capital:</span> 100€</p>
               </div>
             </CardContent>
           </Card>

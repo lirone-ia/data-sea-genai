@@ -45,7 +45,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div className="text-xs text-muted-foreground space-y-1">
               <p>© 2025 DataSea. Enterprise AI Solutions.</p>
-              <p>SASU - Capital: 100€ - SIREN: 988 832 507 - SIRET: 988 832 507 00012</p>
+              <p>SASU - SIREN: 988 832 507 - SIRET: 988 832 507 00012</p>
               <p>TVA: FR77988832507 - NAF: 6202A - Conseil en systèmes et logiciels informatiques</p>
               <p>5 RUE BASSE DES GROUETS, 41000 BLOIS, France</p>
             </div>
