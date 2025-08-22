@@ -26,8 +26,7 @@ const Index = () => {
           Advanced MLOps & AI Engineering
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto">
-          Production-ready AI platforms: multi-cloud orchestration, vector search, and LLM pipelines. 
-          We specialize in Transformers, RAG systems, and low-latency inference at enterprise scale.
+          Operate AI with confidence: multi-cloud orchestration, vector search, and production LLM pipelines. We design low-latency, reliable systems—from retrieval to inference—built to scale and govern.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" className="text-lg px-8 py-6" onClick={() => openModal("contact")}>
@@ -55,7 +54,7 @@ const Index = () => {
                 <strong>Outcome:</strong> One governed source of truth, faster analytics.
               </p>
               <p className="text-muted-foreground text-sm">
-                Event-driven ELT, change-data-capture, data quality checks, lineage, access policies, and cost controls.
+                <strong>Key deliverables:</strong> Event-driven ELT, change-data-capture, data contracts & quality checks, lineage, fine-grained access policies, cost guardrails.
               </p>
             </CardContent>
           </Card>
@@ -72,7 +71,7 @@ const Index = () => {
                 <strong>Outcome:</strong> Accurate transcripts and insights in real time.
               </p>
               <p className="text-muted-foreground text-sm">
-                Speech-to-text, embeddings store, intent & sentiment, topic modeling, toxicity filters, and streaming inference.
+                <strong>Key deliverables:</strong> Speech-to-text, embeddings store, intent & sentiment, topic modeling, toxicity filtering, streaming inference.
               </p>
             </CardContent>
           </Card>
@@ -86,10 +85,10 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-bold mb-4">Customer Segmentation & CLV</h3>
               <p className="text-muted-foreground text-sm mb-3">
-                <strong>Outcome:</strong> Targeting that lifts LTV and reduces churn.
+                <strong>Outcome:</strong> Smarter targeting to lift LTV and reduce churn.
               </p>
               <p className="text-muted-foreground text-sm">
-                Unsupervised clustering, CLV models, uplift scoring, propensity predictions, and campaign measurement.
+                <strong>Key deliverables:</strong> Unsupervised clustering, CLV modeling, uplift scoring, propensity predictions, campaign measurement.
               </p>
             </CardContent>
           </Card>
@@ -106,7 +105,7 @@ const Index = () => {
                 <strong>Outcome:</strong> Grounded answers with auditable citations.
               </p>
               <p className="text-muted-foreground text-sm">
-                Retrieval pipelines, vector databases, evaluation harness, prompt policies, guardrails, and observability.
+                <strong>Key deliverables:</strong> Retrieval pipelines, vector databases, evaluation harness, prompt policies, safety guardrails, observability.
               </p>
             </CardContent>
           </Card>
@@ -123,7 +122,7 @@ const Index = () => {
                 <strong>Outcome:</strong> Repeatable, monitored releases with SLAs.
               </p>
               <p className="text-muted-foreground text-sm">
-                Containers & orchestration, CI/CD for ML, model registry, A/B & canary, feature store, telemetry & alerts.
+                <strong>Key deliverables:</strong> Containers & orchestration, CI/CD for ML, model registry, A/B & canary, feature store, telemetry & alerts.
               </p>
             </CardContent>
           </Card>
@@ -137,10 +136,10 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-bold mb-4">Real-Time Data & Streaming</h3>
               <p className="text-muted-foreground text-sm mb-3">
-                <strong>Outcome:</strong> Millisecond decisions at scale.
+                <strong>Outcome:</strong> Millisecond-level decisions at scale.
               </p>
               <p className="text-muted-foreground text-sm">
-                Event streams, stateful processing, low-latency serving, back-pressure handling, replay, and exactly-once semantics.
+                <strong>Key deliverables:</strong> Event streams, stateful processing, low-latency serving, back-pressure handling, replay, exactly-once semantics.
               </p>
             </CardContent>
           </Card>
@@ -157,19 +156,19 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             <div className="space-y-2">
               <div className="text-2xl font-bold text-primary">Orchestration & IaC</div>
-              <p className="text-xs text-muted-foreground">containers, service mesh, IaC, CD</p>
+              <p className="text-xs text-muted-foreground">Containers & orchestration, service mesh, infrastructure as code, continuous delivery.</p>
             </div>
             <div className="space-y-2">
               <div className="text-2xl font-bold text-primary">Data Processing</div>
-              <p className="text-xs text-muted-foreground">batch/stream, lakehouse formats</p>
+              <p className="text-xs text-muted-foreground">Batch & stream processing, lakehouse/ACID table formats, catalog & governance.</p>
             </div>
             <div className="space-y-2">
               <div className="text-2xl font-bold text-primary">MLOps</div>
-              <p className="text-xs text-muted-foreground">tracking, registry, pipelines, feature store</p>
+              <p className="text-xs text-muted-foreground">Experiment tracking, model registry, automated pipelines, feature store.</p>
             </div>
             <div className="space-y-2">
               <div className="text-2xl font-bold text-primary">LLM & Retrieval</div>
-              <p className="text-xs text-muted-foreground">tokenization, embedding, vector DB, eval</p>
+              <p className="text-xs text-muted-foreground">Tokenization/embedding, vector databases, hybrid search, evaluation suites.</p>
             </div>
           </div>
           <Button variant="outline" size="lg" className="text-lg px-8 py-6">
@@ -188,7 +187,8 @@ const Index = () => {
                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
               </svg>
             </div>
-            <h3 className="text-lg font-semibold mb-2">Senior + emerging talent blended teams</h3>
+            <h3 className="text-lg font-semibold mb-2">Blended teams (senior + emerging talent)</h3>
+            <p className="text-sm text-muted-foreground">Expert-led delivery with scalable engineering capacity.</p>
           </div>
           
           <div className="text-center">
@@ -197,7 +197,8 @@ const Index = () => {
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
             </div>
-            <h3 className="text-lg font-semibold mb-2">Outcome-first approach with measurable KPIs</h3>
+            <h3 className="text-lg font-semibold mb-2">Outcome-first with measurable KPIs</h3>
+            <p className="text-sm text-muted-foreground">Clear acceptance criteria, dashboards, and business impact.</p>
           </div>
           
           <div className="text-center">
@@ -206,7 +207,8 @@ const Index = () => {
                 <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
               </svg>
             </div>
-            <h3 className="text-lg font-semibold mb-2">Security-by-design & governance best practices</h3>
+            <h3 className="text-lg font-semibold mb-2">Security-by-design & governance</h3>
+            <p className="text-sm text-muted-foreground">Encryption, least-privilege access, auditability, privacy best practices.</p>
           </div>
           
           <div className="text-center">
@@ -215,7 +217,8 @@ const Index = () => {
                 <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
               </svg>
             </div>
-            <h3 className="text-lg font-semibold mb-2">Transparent delivery and fixed-price options</h3>
+            <h3 className="text-lg font-semibold mb-2">Transparent delivery</h3>
+            <p className="text-sm text-muted-foreground">Short iterations, fixed-price options, and full handover (runbooks + training).</p>
           </div>
         </div>
       </section>
@@ -224,7 +227,7 @@ const Index = () => {
       <section className="container mx-auto px-6 py-20 text-center">
         <h2 className="text-4xl font-bold mb-6">Scale Your AI Infrastructure</h2>
         <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-          Enterprise-ready MLOps pipelines, low-latency LLM serving, and vector search built for compliance and cost efficiency.
+          Enterprise-ready MLOps pipelines, low-latency LLM serving, and vector search—built for compliance and cost efficiency.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" className="text-lg px-8 py-6" onClick={() => openModal("contact")}>
