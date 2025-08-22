@@ -17,9 +17,9 @@ const Header = () => {
   return (
     <>
       <header className="container mx-auto px-6 py-8">
-        <nav className="flex items-center justify-between md:justify-between justify-center">
-          <div className="flex items-center space-x-3">
-            <a href="/">
+        <nav className="flex items-center justify-between">
+          <div className="flex items-center space-x-3 md:flex w-full md:w-auto justify-center md:justify-start">
+            <a href="/" className="flex justify-center w-full md:w-auto">
               <img 
                 src={logoImage} 
                 alt="DataSea - Enterprise AI Solutions" 
