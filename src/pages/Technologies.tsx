@@ -30,18 +30,21 @@ const Technologies = () => {
       title: "AWS",
       subtitle: "Scalable ML workloads with managed services and flexible runtime",
       chips: ["SageMaker", "Lambda", "EKS", "S3", "EC2", "RDS"],
+      logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
       color: "bg-orange-500"
     },
     {
       title: "Azure",
       subtitle: "Enterprise AI services with hybrid identity and governance",
       chips: ["ML Studio", "AKS", "Functions", "Cognitive Services", "Synapse"],
+      logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg",
       color: "bg-blue-500"
     },
     {
       title: "GCP",
       subtitle: "Analytics-first platform with serverless ML orchestration",
       chips: ["Vertex AI", "BigQuery", "GKE", "Cloud Run", "Dataflow"],
+      logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg",
       color: "bg-green-500"
     }
   ];
@@ -119,8 +122,8 @@ const Technologies = () => {
           {cloudPlatforms.map((platform, index) => (
             <Card key={index} className="border-2 hover:border-primary transition-colors">
               <CardHeader>
-                <div className={`w-12 h-12 ${platform.color} rounded-lg flex items-center justify-center mb-4`}>
-                  <span className="text-white font-bold text-lg">{platform.title[0]}</span>
+                <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-4 p-2">
+                  <img src={platform.logo} alt={`${platform.title} logo`} className="w-full h-full object-contain" />
                 </div>
                 <CardTitle className="text-xl text-primary">
                   {platform.title}
@@ -130,7 +133,7 @@ const Technologies = () => {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {platform.chips.map((chip, chipIndex) => (
-                    <Badge key={chipIndex} variant="secondary" className="text-xs">
+                    <Badge key={chipIndex} variant="secondary" className="text-xs hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all duration-200 cursor-pointer border border-primary/20 hover:border-primary">
                       {chip}
                     </Badge>
                   ))}
@@ -157,7 +160,7 @@ const Technologies = () => {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {framework.chips.map((chip, chipIndex) => (
-                    <Badge key={chipIndex} variant="secondary" className="text-xs">
+                    <Badge key={chipIndex} variant="secondary" className="text-xs hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all duration-200 cursor-pointer border border-primary/20 hover:border-primary">
                       {chip}
                     </Badge>
                   ))}
