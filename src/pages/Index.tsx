@@ -22,7 +22,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="container mx-auto px-6 pt-36 pb-20 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        <h1 className="text-4xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight py-2">
           Advanced MLOps & AI Engineering
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto">
