@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ContactModal } from "@/components/ContactModal";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { useState } from "react";
 import awsLogo from "@/assets/aws-logo.svg";
 import azureLogo from "@/assets/azure-logo.svg";
@@ -85,25 +87,7 @@ const Technologies = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary">
-      {/* Header */}
-      <header className="container mx-auto px-6 py-8">
-        <nav className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <img 
-              src="/lovable-uploads/502f36c9-283c-4022-8de7-8585625012a9.png" 
-              alt="DataSea Logo" 
-              className="h-20 w-auto"
-            />
-          </div>
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-foreground hover:text-primary transition-colors">Home</a>
-            <a href="/#services" className="text-foreground hover:text-primary transition-colors">Services</a>
-            <a href="/technologies" className="text-primary font-medium">Technologies</a>
-            <a href="/#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
-            <Button onClick={() => openModal("contact")}>Get Started</Button>
-          </div>
-        </nav>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-20 text-center">
@@ -265,23 +249,7 @@ const Technologies = () => {
         type={modalType || "contact"} 
       />
 
-      {/* Footer */}
-      <footer className="bg-card border-t py-12">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-3 mb-4 md:mb-0">
-              <img 
-                src="/lovable-uploads/502f36c9-283c-4022-8de7-8585625012a9.png" 
-                alt="DataSea Logo" 
-                className="h-20 w-auto"
-              />
-            </div>
-            <div className="text-sm text-muted-foreground">
-              © 2025 DataSea. Enterprise AI Solutions.
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
