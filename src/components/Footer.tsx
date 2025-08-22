@@ -1,3 +1,5 @@
+import logoImage from "@/assets/datasea-logo-dark.png";
+
 const Footer = () => {
   return (
     <footer className="bg-card border-t py-12">
@@ -5,9 +7,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/502f36c9-283c-4022-8de7-8585625012a9.png" 
-              alt="DataSea Logo" 
-              className="h-20 w-auto"
+              src={logoImage} 
+              alt="DataSea - Enterprise AI Solutions" 
+              className="h-16 w-auto object-contain filter drop-shadow-lg"
             />
           </div>
           
