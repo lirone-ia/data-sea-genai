@@ -3,6 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ContactModal } from "@/components/ContactModal";
 import { useState } from "react";
+import awsLogo from "@/assets/aws-logo.svg";
+import azureLogo from "@/assets/azure-logo.svg";
+import gcpLogo from "@/assets/gcp-logo.svg";
 
 const Technologies = () => {
   const [modalType, setModalType] = useState<"consultation" | "contact" | "demo" | null>(null);
@@ -18,21 +21,21 @@ const Technologies = () => {
   const cloudPlatforms = [
     {
       name: "AWS",
+      logo: awsLogo,
       services: ["SageMaker", "Lambda", "EKS", "S3", "EC2", "RDS"],
-      description: "Comprehensive ML platform with auto-scaling infrastructure",
-      color: "bg-orange-500/10 text-orange-600"
+      description: "Comprehensive ML platform with auto-scaling infrastructure"
     },
     {
-      name: "Azure", 
+      name: "Azure",
+      logo: azureLogo,
       services: ["ML Studio", "AKS", "Functions", "Cognitive Services", "Synapse"],
-      description: "Enterprise-grade AI services with hybrid cloud capabilities",
-      color: "bg-blue-500/10 text-blue-600"
+      description: "Enterprise-grade AI services with hybrid cloud capabilities"
     },
     {
       name: "GCP",
+      logo: gcpLogo,
       services: ["Vertex AI", "BigQuery", "GKE", "Cloud Run", "Dataflow"],
-      description: "Advanced data analytics and ML orchestration platform",
-      color: "bg-green-500/10 text-green-600"
+      description: "Advanced data analytics and ML orchestration platform"
     }
   ];
 
@@ -121,9 +124,13 @@ const Technologies = () => {
             <Card key={platform.name} className="border-2 hover:border-primary transition-colors">
               <CardHeader>
                 <CardTitle className="text-2xl text-center">
-                  <span className={`inline-block px-4 py-2 rounded-lg ${platform.color} font-bold`}>
-                    {platform.name}
-                  </span>
+                  <div className="flex items-center justify-center">
+                    <img 
+                      src={platform.logo} 
+                      alt={`${platform.name} logo`}
+                      className="h-12 w-auto object-contain"
+                    />
+                  </div>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
