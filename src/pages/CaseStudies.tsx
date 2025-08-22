@@ -26,7 +26,7 @@ const CaseStudies = () => {
           Case Studies
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto">
-          Real AI Impact: Anonymized results showing measurable outcomes across industries.
+          Real AI impact—anonymized engagements with measurable outcomes. Below are selected examples across Retail, Banking, and Manufacturing.
         </p>
       </section>
 
@@ -46,12 +46,28 @@ const CaseStudies = () => {
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold mb-2 text-primary">Problem:</h4>
-                  <p className="text-muted-foreground text-sm">Low conversion on new collections.</p>
+                  <p className="text-muted-foreground text-sm">Low conversion on new collections and limited content coverage for long-tail products.</p>
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2 text-primary">Solution:</h4>
-                  <p className="text-muted-foreground text-sm">Segmentation + RAG-based product Q&A + recommendations.</p>
+                  <h4 className="font-semibold mb-2 text-primary">Approach:</h4>
+                  <ul className="text-muted-foreground text-xs space-y-1">
+                    <li>• Data: Product catalog, content/reviews, web/app events, CRM/loyalty, pricing & promos</li>
+                    <li>• Retrieval & LLM: Retrieval-augmented Q&A for product discovery (grounded responses with citations)</li>
+                    <li>• Models: Customer segmentation, propensity & uplift, re-ranking for recommendations</li>
+                    <li>• Architecture: Batch + streaming features, vector store for product/content, online inference with caching</li>
+                    <li>• Evaluation: Offline ranking metrics (NDCG/Recall), online A/B with guardrails (latency, error rate)</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-2 text-primary">Delivery footprint:</h4>
+                  <p className="text-muted-foreground text-xs">8–12 weeks • Squad: 1 Lead ML Engineer, 1 Data Engineer, 1 Applied Scientist, 1 Analytics Engineer</p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-2 text-primary">Governance & safety:</h4>
+                  <p className="text-muted-foreground text-xs">PII minimization, access controls, prompt safety policies, human-in-the-loop for content quality</p>
                 </div>
                 
                 <div>
@@ -92,12 +108,28 @@ const CaseStudies = () => {
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold mb-2 text-primary">Problem:</h4>
-                  <p className="text-muted-foreground text-sm">High false positives in rule-based monitoring.</p>
+                  <p className="text-muted-foreground text-sm">High false positives from rule-based monitoring, slow analyst triage.</p>
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2 text-primary">Solution:</h4>
-                  <p className="text-muted-foreground text-sm">Streaming features + supervised model + analyst copilot.</p>
+                  <h4 className="font-semibold mb-2 text-primary">Approach:</h4>
+                  <ul className="text-muted-foreground text-xs space-y-1">
+                    <li>• Data: Transactions/events, device & session metadata, KYC/AML, external signals</li>
+                    <li>• Features: Streaming feature store, entity resolution, graph-derived features</li>
+                    <li>• Models: Supervised classification with calibrated thresholds; analyst copilot for explanations and playbooks</li>
+                    <li>• Architecture: Low-latency scoring service, replayable streams, decisioning policies, audit logging</li>
+                    <li>• Evaluation: PR/ROC, cost-weighted metrics, drift & stability monitoring; human review loop</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-2 text-primary">Delivery footprint:</h4>
+                  <p className="text-muted-foreground text-xs">10–14 weeks • Squad: 1 Lead ML, 1 Platform/Infra, 1 Data Engineer, 1 Fraud Analyst (client)</p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-2 text-primary">Governance & safety:</h4>
+                  <p className="text-muted-foreground text-xs">GDPR & AML obligations, model risk governance, explainability artifacts (feature attributions)</p>
                 </div>
                 
                 <div>
@@ -138,12 +170,27 @@ const CaseStudies = () => {
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold mb-2 text-primary">Problem:</h4>
-                  <p className="text-muted-foreground text-sm">Unexpected line stoppages.</p>
+                  <p className="text-muted-foreground text-sm">Unexpected line stoppages impacting throughput and yield.</p>
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2 text-primary">Solution:</h4>
-                  <p className="text-muted-foreground text-sm">Sensor stream processing + anomaly detection + alerting.</p>
+                  <h4 className="font-semibold mb-2 text-primary">Approach:</h4>
+                  <ul className="text-muted-foreground text-xs space-y-1">
+                    <li>• Data: Sensor/PLC streams, MES/ERP events, maintenance logs, vision QC signals</li>
+                    <li>• Models: Time-series anomaly detection, survival/remaining useful life; alert ranking & root-cause hints</li>
+                    <li>• Architecture: Stream processing with stateful operators, online inference, work-order integration</li>
+                    <li>• Evaluation: Early-warning lead time, precision@k for alerts, MTTR/MTBF improvements</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-2 text-primary">Delivery footprint:</h4>
+                  <p className="text-muted-foreground text-xs">12–16 weeks • Squad: 1 Lead ML, 1 Streaming Engineer, 1 Data Engineer, 1 Reliability/OT liaison</p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-2 text-primary">Governance & safety:</h4>
+                  <p className="text-muted-foreground text-xs">Environment isolation, change control, traceability and audit trails</p>
                 </div>
                 
                 <div>
@@ -178,7 +225,7 @@ const CaseStudies = () => {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Create Your Success Story?</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Let's discuss how we can deliver similar measurable outcomes for your business.
+            Let's map your use cases, data assets, and constraints—then deliver a roadmap with clear KPIs, governance, and a production plan.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8 py-6" onClick={() => openModal("contact")}>
