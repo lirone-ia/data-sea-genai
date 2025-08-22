@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <>
       <header className="container mx-auto px-6 py-8">
-        <nav className="flex items-center justify-between">
+        <nav className="flex items-center justify-between md:justify-between justify-center">
           <div className="flex items-center space-x-3">
             <a href="/">
               <img 
