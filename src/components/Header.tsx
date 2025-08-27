@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ContactModal } from "@/components/ContactModal";
 import { useState } from "react";
-import LogoWithBackgroundRemoval from "@/components/LogoWithBackgroundRemoval";
+import logoImage from "@/assets/datasea-logo-waves.png";
 
 const Header = () => {
   const [modalType, setModalType] = useState<"consultation" | "contact" | "demo" | null>(null);
@@ -21,7 +21,16 @@ const Header = () => {
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-3 sm:flex w-full sm:w-auto justify-center sm:justify-start">
             <a href="/" className="flex justify-center w-full sm:w-auto">
-              <LogoWithBackgroundRemoval />
+              <img 
+                src={logoImage} 
+                alt="DataSea - Enterprise AI Solutions" 
+                className="h-16 sm:h-20 w-auto object-contain"
+                style={{
+                  filter: 'drop-shadow(0 0 0 transparent)',
+                  backgroundColor: 'transparent',
+                  mixBlendMode: 'multiply'
+                }}
+              />
             </a>
           </div>
           <div className="hidden sm:flex items-center space-x-4 lg:space-x-8">
