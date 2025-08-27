@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ContactModal } from "@/components/ContactModal";
 import { useState } from "react";
-import logoImage from "@/assets/datasea-logo-waves.png";
 
 const Header = () => {
   const [modalType, setModalType] = useState<"consultation" | "contact" | "demo" | null>(null);
@@ -21,16 +20,12 @@ const Header = () => {
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-3 sm:flex w-full sm:w-auto justify-center sm:justify-start">
             <a href="/" className="flex justify-center w-full sm:w-auto">
-              <img 
-                src={logoImage} 
-                alt="DataSea - Enterprise AI Solutions" 
-                className="h-16 sm:h-20 w-auto object-contain"
-                style={{
-                  filter: 'drop-shadow(0 0 0 transparent)',
-                  backgroundColor: 'transparent',
-                  mixBlendMode: 'multiply'
-                }}
-              />
+              <div className="text-2xl sm:text-3xl font-bold text-foreground hover:text-primary transition-colors">
+                Data<span className="text-primary relative">
+                  Sea
+                  <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary/60 via-accent/80 to-primary/60 rounded-full animate-pulse"></span>
+                </span>
+              </div>
             </a>
           </div>
           <div className="hidden sm:flex items-center space-x-4 lg:space-x-8">
