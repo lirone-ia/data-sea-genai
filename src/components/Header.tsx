@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ContactModal } from "@/components/ContactModal";
 import { useState } from "react";
-import logoImage from "@/assets/datasea-logo-dark.png";
+import logoImage from "@/assets/datasea-logo-waves.png";
 
 const Header = () => {
   const [modalType, setModalType] = useState<"consultation" | "contact" | "demo" | null>(null);
@@ -24,7 +24,7 @@ const Header = () => {
               <img 
                 src={logoImage} 
                 alt="DataSea - Enterprise AI Solutions" 
-                className="h-16 sm:h-20 w-auto object-contain"
+                className="h-16 sm:h-20 w-auto object-contain mix-blend-screen"
               />
             </a>
           </div>
