@@ -24,7 +24,7 @@ const Header = () => {
               <img 
                 src={logoImage} 
                 alt="DataSea - Enterprise AI Solutions" 
-                className="h-16 sm:h-20 w-auto object-contain filter drop-shadow-lg"
+                className="h-16 sm:h-20 w-auto object-contain"
               />
             </a>
           </div>
