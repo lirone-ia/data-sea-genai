@@ -8,7 +8,7 @@ const Cookies = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 pt-32 pb-20">
+      <section className="container mx-auto px-6 pt-32 pb-12">
         <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent text-center">
           Cookie Policy
         </h1>
@@ -21,14 +21,30 @@ const Cookies = () => {
         
         {/* Cookie Settings Button */}
         <div className="text-center">
-          <Button id="cookie-settings-trigger" variant="outline" size="lg">
+          <Button 
+            variant="outline" 
+            size="lg"
+            onClick={() => {
+              // Trigger cookie banner/modal - adjust based on your CMP implementation
+              if (typeof window !== 'undefined') {
+                // Example for common CMP implementations
+                const gtag = (window as any).gtag;
+                if (gtag) {
+                  gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                  });
+                }
+                alert('Cookie settings would open here. This requires CMP integration.');
+              }
+            }}
+          >
             Cookie Settings
           </Button>
         </div>
       </section>
 
       {/* Cookie Content */}
-      <section className="container mx-auto px-6 py-20">
+      <section className="container mx-auto px-6 py-12">
         <div className="max-w-4xl mx-auto prose prose-lg">
           <div className="space-y-12 text-muted-foreground">
             <div>
@@ -54,7 +70,15 @@ const Cookies = () => {
               <ul className="list-disc pl-6 space-y-2">
                 <li>On your first visit, a banner asks for your consent for non-essential cookies (<strong>Analytics</strong>, <strong>Functional</strong>, <strong>Marketing</strong>).</li>
                 <li>We do <strong>not</strong> place non-essential cookies unless you consent. You can withdraw or change consent at any time.</li>
-                <li>Manage your choices here: <Button id="cookie-settings-trigger" variant="link" className="p-0 h-auto text-primary"><strong>Cookie Settings</strong></Button> (button opens CMP).</li>
+                <li>Manage your choices here: <Button 
+                  variant="link" 
+                  className="p-0 h-auto text-primary"
+                  onClick={() => {
+                    if (typeof window !== 'undefined') {
+                      alert('Cookie settings would open here. This requires CMP integration.');
+                    }
+                  }}
+                ><strong>Cookie Settings</strong></Button> (button opens CMP).</li>
                 <li>If your browser sends a <strong>Do Not Track</strong> or similar signal, we will honor it where technically feasible.</li>
                 <li>You can also control cookies via your browser settings. Blocking all cookies may impact site functionality.</li>
               </ul>

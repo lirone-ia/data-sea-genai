@@ -90,7 +90,7 @@ const Technologies = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 pt-32 pb-20 text-center">
+      <section className="container mx-auto px-6 pt-32 pb-12 text-center">
         <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
           Multi-Cloud Architecture & Tech Stack
         </h1>
