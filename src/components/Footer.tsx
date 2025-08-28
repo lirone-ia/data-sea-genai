@@ -1,16 +1,17 @@
-import logoImage from "@/assets/datasea-logo-final.png";
-
 const Footer = () => {
   return (
     <footer className="bg-card border-t py-12">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="flex items-center space-x-3">
-            <img 
-              src={logoImage} 
-              alt="DataSea - Enterprise AI Solutions" 
-              className="h-16 w-auto object-contain filter drop-shadow-lg"
-            />
+            <a href="/" className="flex items-center">
+              <div className="text-2xl sm:text-3xl font-bold text-foreground hover:text-primary transition-colors">
+                Data<span className="text-primary relative">
+                  Sea
+                  <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary/60 via-accent/80 to-primary/60 rounded-full animate-pulse"></span>
+                </span>
+              </div>
+            </a>
           </div>
           
           <div>
