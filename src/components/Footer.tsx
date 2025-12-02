@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
     return (
         <footer className="bg-datasea-dark border-t border-datasea-border py-12">
@@ -10,9 +12,9 @@ const Footer = () => {
                 </div>
 
                 <div className="flex gap-8">
-                    <a href="#" className="text-sm text-datasea-muted hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" className="text-sm text-datasea-muted hover:text-white transition-colors">Terms of Service</a>
-                    <a href="#" className="text-sm text-datasea-muted hover:text-white transition-colors">Contact</a>
+                    <Link to="/privacy" className="text-sm text-datasea-muted hover:text-white transition-colors">Privacy Policy</Link>
+                    <Link to="/terms" className="text-sm text-datasea-muted hover:text-white transition-colors">Terms of Service</Link>
+                    <Link to="/contact" className="text-sm text-datasea-muted hover:text-white transition-colors">Contact</Link>
                 </div>
             </div>
         </footer>

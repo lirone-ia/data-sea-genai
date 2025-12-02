@@ -6,6 +6,8 @@ import Technologies from "./pages/Technologies";
 import CaseStudies from "./pages/CaseStudies";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import ScrollToTop from "./components/ScrollToTop";
 import WaveBackground from "./components/WaveBackground";
 
@@ -26,6 +28,8 @@ function App() {
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
           </Routes>
         </div>
       </div>
