@@ -1,245 +1,164 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
+import { useState, ChangeEvent, FormEvent } from 'react';
+import { motion } from 'framer-motion';
+import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import WaveBackground from '../components/WaveBackground';
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    email: "",
-    company: "",
-    industry: "",
-    clouds: "",
-    useCase: "",
-    timeline: "",
-    budget: "",
-    message: "",
-    gdprConsent: false
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.gdprConsent) {
-      toast({
-        title: "GDPR Consent Required",
-        description: "Please accept the privacy policy to continue.",
-        variant: "destructive"
-      });
-      return;
-    }
-    
-    toast({
-      title: "Message Sent!",
-      description: "Thanks — we'll get back to you within one business day.",
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        company: '',
+        message: ''
     });
-    
-    // Reset form
-    setFormData({
-      email: "",
-      company: "",
-      industry: "",
-      clouds: "",
-      useCase: "",
-      timeline: "",
-      budget: "",
-      message: "",
-      gdprConsent: false
-    });
-  };
 
-  const handleInputChange = (field: string, value: string | boolean) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: value
-    }));
-  };
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
 
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-secondary">
-      <Header />
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
 
-      {/* Hero Section */}
-      <section className="container mx-auto px-6 pt-32 pb-12">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Contact DataSea
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto">
-            Tell us about your use case. An engineer will reply within one business day.
-          </p>
+        const subject = `Contact Request from ${formData.name} (${formData.company})`;
+        const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ACompany: ${formData.company}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+
+        window.location.href = `mailto:management@datasea.fr?subject=${encodeURIComponent(subject)}&body=${body}`;
+    };
+
+    return (
+        <div className="min-h-screen bg-datasea-dark text-datasea-text">
+            <Header />
+
+            <section className="relative pt-32 pb-16 overflow-hidden">
+                <WaveBackground />
+                <div className="relative container mx-auto px-6 z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center mb-16"
+                    >
+                        <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-datasea-cyan to-datasea-blue bg-clip-text text-transparent">
+                            Contact Us
+                        </h1>
+                        <p className="text-xl md:text-2xl text-datasea-muted max-w-4xl mx-auto">
+                            Let's discuss how we can help you build production-ready AI infrastructure.
+                        </p>
+                    </motion.div>
+
+                    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+                        {/* Contact Form */}
+                        <div className="p-8 rounded-2xl bg-datasea-navy/50 border border-datasea-border backdrop-blur-sm">
+                            <h2 className="text-2xl font-bold mb-6 text-datasea-cyan">Send us a message</h2>
+                            <form onSubmit={handleSubmit} className="space-y-4">
+                                <div>
+                                    <label className="block text-sm font-medium mb-2">Name</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        required
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 bg-datasea-dark border border-datasea-border rounded-lg focus:outline-none focus:border-datasea-cyan transition-colors"
+                                        placeholder="Your name"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium mb-2">Email</label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        required
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 bg-datasea-dark border border-datasea-border rounded-lg focus:outline-none focus:border-datasea-cyan transition-colors"
+                                        placeholder="your@email.com"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium mb-2">Company</label>
+                                    <input
+                                        type="text"
+                                        name="company"
+                                        value={formData.company}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 bg-datasea-dark border border-datasea-border rounded-lg focus:outline-none focus:border-datasea-cyan transition-colors"
+                                        placeholder="Your company"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium mb-2">Message</label>
+                                    <textarea
+                                        name="message"
+                                        required
+                                        rows={5}
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 bg-datasea-dark border border-datasea-border rounded-lg focus:outline-none focus:border-datasea-cyan transition-colors resize-none"
+                                        placeholder="Tell us about your project..."
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="w-full px-8 py-4 bg-datasea-blue hover:bg-datasea-cyan text-white font-medium rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] flex items-center justify-center gap-2"
+                                >
+                                    <Send className="w-5 h-5" />
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+
+                        {/* Contact Info */}
+                        <div className="space-y-8">
+                            <div className="p-8 rounded-2xl bg-datasea-navy/50 border border-datasea-border backdrop-blur-sm">
+                                <div className="flex items-start gap-4">
+                                    <div className="p-3 bg-datasea-cyan/10 rounded-lg">
+                                        <Mail className="w-6 h-6 text-datasea-cyan" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold mb-2">Email</h3>
+                                        <a href="mailto:management@datasea.fr" className="text-datasea-muted hover:text-datasea-cyan transition-colors">
+                                            management@datasea.fr
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="p-8 rounded-2xl bg-datasea-navy/50 border border-datasea-border backdrop-blur-sm">
+                                <div className="flex items-start gap-4">
+                                    <div className="p-3 bg-datasea-cyan/10 rounded-lg">
+                                        <Phone className="w-6 h-6 text-datasea-cyan" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold mb-2">Phone</h3>
+                                        <p className="text-datasea-muted">+33 (0)1 XX XX XX XX</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="p-8 rounded-2xl bg-datasea-navy/50 border border-datasea-border backdrop-blur-sm">
+                                <div className="flex items-start gap-4">
+                                    <div className="p-3 bg-datasea-cyan/10 rounded-lg">
+                                        <MapPin className="w-6 h-6 text-datasea-cyan" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold mb-2">Location</h3>
+                                        <p className="text-datasea-muted">Paris, France</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <Footer />
         </div>
-        
-        <div className="max-w-md mx-auto text-center mb-8">
-          <Card className="border-2">
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-4">Office Address</h3>
-              <div className="text-muted-foreground space-y-1">
-                <p><strong>DataSea</strong></p>
-                <p>5 RUE BASSE DES GROUETS</p>
-                <p>41000 BLOIS, France</p>
-                <div className="text-xs mt-4 space-y-1 border-t pt-4">
-                  <p>SIREN: 988 832 507</p>
-                  <p>SIRET: 988 832 507 00012</p>
-                  <p>TVA: FR77988832507</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Contact Form */}
-      <section className="container mx-auto px-6 py-20">
-        <div className="max-w-2xl mx-auto">
-          <Card className="border-2">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <Label htmlFor="email">Work Email *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => handleInputChange("email", e.target.value)}
-                      className="mt-2"
-                    />
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="company">Company *</Label>
-                    <Input
-                      id="company"
-                      required
-                      value={formData.company}
-                      onChange={(e) => handleInputChange("company", e.target.value)}
-                      className="mt-2"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <Label htmlFor="industry">Industry</Label>
-                    <Select onValueChange={(value) => handleInputChange("industry", value)}>
-                      <SelectTrigger className="mt-2">
-                        <SelectValue placeholder="Select industry" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="banking">Banking & Financial Services</SelectItem>
-                        <SelectItem value="retail">Cosmetics & Retail</SelectItem>
-                        <SelectItem value="automotive">Automotive & Manufacturing</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="clouds">Clouds/Environments</Label>
-                    <Input
-                      id="clouds"
-                      placeholder="AWS, Azure, GCP, On-prem..."
-                      value={formData.clouds}
-                      onChange={(e) => handleInputChange("clouds", e.target.value)}
-                      className="mt-2"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <Label htmlFor="useCase">Use Case</Label>
-                    <Select onValueChange={(value) => handleInputChange("useCase", value)}>
-                      <SelectTrigger className="mt-2">
-                        <SelectValue placeholder="Select use case" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="data-platform">Data Platform & Integration</SelectItem>
-                        <SelectItem value="ml-analytics">ML & Analytics</SelectItem>
-                        <SelectItem value="llm-rag">LLM & RAG Systems</SelectItem>
-                        <SelectItem value="mlops">MLOps & Platform Engineering</SelectItem>
-                        <SelectItem value="voice-nlp">Voice Analytics & NLP</SelectItem>
-                        <SelectItem value="real-time">Real-Time & Streaming</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="timeline">Timeline</Label>
-                    <Select onValueChange={(value) => handleInputChange("timeline", value)}>
-                      <SelectTrigger className="mt-2">
-                        <SelectValue placeholder="Select timeline" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="asap">ASAP</SelectItem>
-                        <SelectItem value="1-3months">1-3 months</SelectItem>
-                        <SelectItem value="3-6months">3-6 months</SelectItem>
-                        <SelectItem value="6months+">6+ months</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
-                <div>
-                  <Label htmlFor="budget">Budget Range</Label>
-                  <Select onValueChange={(value) => handleInputChange("budget", value)}>
-                    <SelectTrigger className="mt-2">
-                      <SelectValue placeholder="Select budget range" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="50k-100k">€50k - €100k</SelectItem>
-                      <SelectItem value="100k-250k">€100k - €250k</SelectItem>
-                      <SelectItem value="250k-500k">€250k - €500k</SelectItem>
-                      <SelectItem value="500k+">€500k+</SelectItem>
-                      <SelectItem value="discuss">Let's discuss</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Tell us about your specific requirements, challenges, or goals..."
-                    value={formData.message}
-                    onChange={(e) => handleInputChange("message", e.target.value)}
-                    className="mt-2 min-h-[120px]"
-                  />
-                </div>
-
-                <div className="flex items-center space-x-2">
-                  <Checkbox
-                    id="gdpr"
-                    checked={formData.gdprConsent}
-                    onCheckedChange={(checked) => handleInputChange("gdprConsent", checked as boolean)}
-                  />
-                  <Label htmlFor="gdpr" className="text-sm">
-                    I agree to the processing of my personal data in accordance with the{" "}
-                    <a href="/privacy" className="text-primary hover:underline">privacy policy</a>
-                  </Label>
-                </div>
-
-                <Button type="submit" size="lg" className="w-full">
-                  Send Message
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      <Footer />
-    </div>
-  );
+    );
 };
 
 export default Contact;
