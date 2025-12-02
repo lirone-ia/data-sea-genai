@@ -100,6 +100,42 @@ const Index = () => {
                     </div>
                 </section>
 
+                {/* Technologies Preview */}
+                <section className="py-20 bg-datasea-navy/30 relative overflow-hidden">
+                    <div className="absolute inset-0 wave-pattern opacity-50"></div>
+                    <div className="relative container mx-auto px-6 text-center">
+                        <h2 className="text-4xl font-bold mb-8">Selected Technologies</h2>
+                        <p className="text-xl text-datasea-muted mb-12 max-w-3xl mx-auto">
+                            Portable, resilient platforms that avoid vendor lock-in
+                        </p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                            <div className="space-y-3 p-6 rounded-xl bg-datasea-dark/50 border border-datasea-border backdrop-blur-sm">
+                                <div className="text-2xl font-bold text-datasea-cyan">Orchestration & IaC</div>
+                                <p className="text-sm text-datasea-muted">Containers & orchestration, service mesh, infrastructure as code, continuous delivery.</p>
+                            </div>
+                            <div className="space-y-3 p-6 rounded-xl bg-datasea-dark/50 border border-datasea-border backdrop-blur-sm">
+                                <div className="text-2xl font-bold text-datasea-cyan">Data Processing</div>
+                                <p className="text-sm text-datasea-muted">Batch & stream processing, lakehouse/ACID table formats, catalog & governance.</p>
+                            </div>
+                            <div className="space-y-3 p-6 rounded-xl bg-datasea-dark/50 border border-datasea-border backdrop-blur-sm">
+                                <div className="text-2xl font-bold text-datasea-cyan">MLOps</div>
+                                <p className="text-sm text-datasea-muted">Experiment tracking, model registry, automated pipelines, feature store.</p>
+                            </div>
+                            <div className="space-y-3 p-6 rounded-xl bg-datasea-dark/50 border border-datasea-border backdrop-blur-sm">
+                                <div className="text-2xl font-bold text-datasea-cyan">LLM & Retrieval</div>
+                                <p className="text-sm text-datasea-muted">Tokenization/embedding, vector databases, hybrid search, evaluation suites.</p>
+                            </div>
+                        </div>
+                        <Link
+                            to="/technologies"
+                            className="inline-block px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium rounded-full transition-all duration-300 backdrop-blur-sm"
+                        >
+                            View Full Tech Stack
+                        </Link>
+                    </div>
+                </section>
+
+                {/* Why DataSea Section */}
                 <section className="py-24 bg-datasea-dark">
                     <div className="max-w-7xl mx-auto px-6">
                         <h2 className="text-4xl font-bold text-center mb-16">Why DataSea</h2>
