@@ -1,53 +1,104 @@
-import { Button } from "@/components/ui/button";
-import { ContactModal } from "@/components/ContactModal";
-import { useState } from "react";
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
-  const [modalType, setModalType] = useState<"consultation" | "contact" | "demo" | null>(null);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const openModal = (type: "consultation" | "contact" | "demo") => {
-    setModalType(type);
-  };
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-  const closeModal = () => {
-    setModalType(null);
-  };
+    const navLinks = [
+        { name: 'Services', to: '/services' },
+        { name: 'Industries', to: '/industries' },
+        { name: 'Technologies', to: '/technologies' },
+        { name: 'Case Studies', to: '/case-studies' },
+        { name: 'About', to: '/about' },
+    ];
 
-  return (
-    <>
-      <header className="fixed top-0 left-0 right-0 bg-gradient-to-r from-slate-900/95 via-slate-800/98 to-slate-900/95 backdrop-blur-md z-50 border-b border-primary/30 shadow-lg shadow-primary/10">
-        <div className="container mx-auto px-6 py-4">
-        <nav className="flex items-center justify-between">
-          <div className="flex items-center space-x-3 sm:flex w-full sm:w-auto justify-center sm:justify-start">
-            <a href="/" className="flex justify-center w-full sm:w-auto">
-              <div className="text-2xl sm:text-3xl font-bold text-foreground hover:text-primary transition-colors">
-                Data<span className="text-primary relative">
-                  Sea
-                  <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary/60 via-accent/80 to-primary/60 rounded-full animate-pulse"></span>
-                </span>
-              </div>
-            </a>
-          </div>
-          <div className="hidden sm:flex items-center space-x-4 lg:space-x-8">
-            <a href="/services" className="text-foreground hover:text-primary transition-colors">Services</a>
-            <a href="/industries" className="text-foreground hover:text-primary transition-colors">Industries</a>
-            <a href="/technologies" className="text-foreground hover:text-primary transition-colors">Technologies</a>
-            <a href="/case-studies" className="text-foreground hover:text-primary transition-colors">Case Studies</a>
-            <a href="/about" className="text-foreground hover:text-primary transition-colors">About</a>
-            <a href="/contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
-            <Button onClick={() => openModal("contact")}>Get Started</Button>
-          </div>
-        </nav>
-        </div>
-      </header>
+    return (
+        <header
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-datasea-dark/80 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
+                }`}
+        >
+            <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                {/* Logo */}
+                <Link to="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-datasea-cyan to-datasea-blue">
+                    DataSea
+                </Link>
 
-      <ContactModal 
-        isOpen={modalType !== null} 
-        onClose={closeModal} 
-        type={modalType || "contact"} 
-      />
-    </>
-  );
+                {/* Desktop Navigation */}
+                <nav className="hidden md:flex items-center gap-8">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            to={link.to}
+                            className="text-sm font-medium text-datasea-muted hover:text-white transition-colors"
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                </nav>
+
+                {/* CTA Button */}
+                <div className="hidden md:block">
+                    <Link
+                        to="/contact"
+                        className="px-6 py-2.5 bg-datasea-blue hover:bg-datasea-cyan text-white text-sm font-medium rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)]"
+                    >
+                        Contact Us
+                    </Link>
+                </div>
+
+                {/* Mobile Menu Button */}
+                <button
+                    className="md:hidden text-white"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                    {isMobileMenuOpen ? <X /> : <Menu />}
+                </button>
+            </div>
+
+            {/* Mobile Menu */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        className="absolute top-20 left-0 right-0 bg-datasea-dark border-b border-white/10 p-6 md:hidden"
+                    >
+                        <nav className="flex flex-col gap-4">
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    to={link.to}
+                                    className="text-datasea-muted hover:text-white transition-colors"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+                            <Link
+                                to="/contact"
+                                className="inline-block text-center px-6 py-3 bg-datasea-blue text-white rounded-full mt-4"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Contact Us
+                            </Link>
+                        </nav>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </header>
+    );
 };
 
 export default Header;

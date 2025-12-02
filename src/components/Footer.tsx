@@ -1,67 +1,22 @@
 const Footer = () => {
-  return (
-    <footer className="bg-card border-t py-12">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div className="flex items-center space-x-3">
-            <a href="/" className="flex items-center">
-              <div className="text-2xl sm:text-3xl font-bold text-foreground hover:text-primary transition-colors">
-                Data<span className="text-primary relative">
-                  Sea
-                  <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary/60 via-accent/80 to-primary/60 rounded-full animate-pulse"></span>
-                </span>
-              </div>
-            </a>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <div className="space-y-2">
-              <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors">All Services</a>
-              <a href="/industries" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Industries</a>
-              <a href="/case-studies" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Case Studies</a>
+    return (
+        <footer className="bg-datasea-dark border-t border-datasea-border py-12">
+            <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="text-center md:text-left">
+                    <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-datasea-cyan to-datasea-blue">DataSea</span>
+                    <p className="text-sm text-datasea-muted mt-2">
+                        © {new Date().getFullYear()} DataSea. All rights reserved.
+                    </p>
+                </div>
+
+                <div className="flex gap-8">
+                    <a href="#" className="text-sm text-datasea-muted hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" className="text-sm text-datasea-muted hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" className="text-sm text-datasea-muted hover:text-white transition-colors">Contact</a>
+                </div>
             </div>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <div className="space-y-2">
-              <a href="/about" className="block text-sm text-muted-foreground hover:text-primary transition-colors">About</a>
-              <a href="/careers" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Careers</a>
-              <a href="/blog" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Blog</a>
-              <a href="/security" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Security</a>
-            </div>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
-            <div className="space-y-2">
-              <a href="/privacy" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Privacy</a>
-              <a href="/terms" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Terms</a>
-              <a href="/cookies" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Cookies</a>
-              <a href="/contact" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Contact</a>
-            </div>
-          </div>
-        </div>
-        
-        <div className="border-t pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div className="text-xs text-muted-foreground space-y-1">
-              <p>© 2025 DataSea. Enterprise AI Solutions.</p>
-              <p>SASU - SIREN: 988 832 507 - SIRET: 988 832 507 00012</p>
-              <p>TVA: FR77988832507 - NAF: 6202A - Conseil en systèmes et logiciels informatiques</p>
-              <p>5 RUE BASSE DES GROUETS, 41000 BLOIS, France</p>
-            </div>
-            <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                LinkedIn
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
+        </footer>
+    );
 };
 
 export default Footer;
