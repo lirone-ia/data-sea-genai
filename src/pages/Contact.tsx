@@ -135,7 +135,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h3 className="font-bold mb-2">Phone</h3>
-                                        <p className="text-datasea-muted">+33 (0)1 XX XX XX XX</p>
+                                        <p className="text-datasea-muted">+33 7 67 55 42 69</p>
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +147,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h3 className="font-bold mb-2">Location</h3>
-                                        <p className="text-datasea-muted">Paris, France</p>
+                                        <p className="text-datasea-muted">Blois, France</p>
                                     </div>
                                 </div>
                             </div>
