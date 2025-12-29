@@ -1,8 +1,14 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { Calendar, ArrowRight, TrendingUp, Database, Brain, Shield, Cloud, Zap } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
+import aiGenerativeImg from '@/assets/news/ai-generative.jpg';
+import dataMeshImg from '@/assets/news/data-mesh.jpg';
+import cloudSecurityImg from '@/assets/news/cloud-security.jpg';
+import streamingImg from '@/assets/news/streaming.jpg';
+import mlopsImg from '@/assets/news/mlops.jpg';
+import cloudMigrationImg from '@/assets/news/cloud-migration.jpg';
 
 const newsArticles = [
     {
@@ -12,6 +18,7 @@ const newsArticles = [
         date: "2024-12-15",
         category: "Intelligence Artificielle",
         icon: Brain,
+        image: aiGenerativeImg,
         readTime: "5 min",
         featured: true
     },
@@ -22,6 +29,7 @@ const newsArticles = [
         date: "2024-12-10",
         category: "Architecture Data",
         icon: Database,
+        image: dataMeshImg,
         readTime: "7 min",
         featured: true
     },
@@ -32,6 +40,7 @@ const newsArticles = [
         date: "2024-12-05",
         category: "Sécurité",
         icon: Shield,
+        image: cloudSecurityImg,
         readTime: "6 min",
         featured: false
     },
@@ -42,6 +51,7 @@ const newsArticles = [
         date: "2024-11-28",
         category: "Data Engineering",
         icon: Zap,
+        image: streamingImg,
         readTime: "8 min",
         featured: false
     },
@@ -52,6 +62,7 @@ const newsArticles = [
         date: "2024-11-20",
         category: "MLOps",
         icon: TrendingUp,
+        image: mlopsImg,
         readTime: "6 min",
         featured: false
     },
@@ -62,6 +73,7 @@ const newsArticles = [
         date: "2024-11-15",
         category: "Cloud",
         icon: Cloud,
+        image: cloudMigrationImg,
         readTime: "10 min",
         featured: false
     }
@@ -138,19 +150,27 @@ const News = () => {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-datasea-navy/80 to-datasea-dark border border-datasea-border hover:border-datasea-cyan/50 transition-all duration-500"
                             >
-                                <div className="p-8">
-                                    <div className="flex items-center gap-4 mb-6">
-                                        <div className="p-3 rounded-xl bg-datasea-cyan/10 text-datasea-cyan">
-                                            <article.icon className="w-6 h-6" />
+                                <div className="aspect-video overflow-hidden">
+                                    <img 
+                                        src={article.image} 
+                                        alt={article.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-datasea-dark via-datasea-dark/50 to-transparent" />
+                                </div>
+                                <div className="absolute bottom-0 left-0 right-0 p-8">
+                                    <div className="flex items-center gap-4 mb-4">
+                                        <div className="p-2 rounded-lg bg-datasea-cyan/20 text-datasea-cyan backdrop-blur-sm">
+                                            <article.icon className="w-5 h-5" />
                                         </div>
-                                        <span className="text-xs font-medium px-3 py-1 rounded-full bg-datasea-blue/20 text-datasea-cyan">
+                                        <span className="text-xs font-medium px-3 py-1 rounded-full bg-datasea-blue/30 text-datasea-cyan backdrop-blur-sm">
                                             {article.category}
                                         </span>
                                     </div>
-                                    <h3 className="text-2xl font-bold mb-4 group-hover:text-datasea-cyan transition-colors">
+                                    <h3 className="text-2xl font-bold mb-3 group-hover:text-datasea-cyan transition-colors">
                                         {article.title}
                                     </h3>
-                                    <p className="text-datasea-muted mb-6 line-clamp-3">
+                                    <p className="text-datasea-muted mb-4 line-clamp-2">
                                         {article.excerpt}
                                     </p>
                                     <div className="flex items-center justify-between">
@@ -170,7 +190,6 @@ const News = () => {
                                         </button>
                                     </div>
                                 </div>
-                                <div className="absolute inset-0 bg-gradient-to-t from-datasea-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                             </motion.article>
                         ))}
                     </div>
@@ -181,32 +200,41 @@ const News = () => {
             <section className="py-16 bg-datasea-navy/30">
                 <div className="container mx-auto px-6">
                     <h2 className="text-2xl font-bold mb-8">Tous les Articles</h2>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {regularArticles.map((article, index) => (
                             <motion.article
                                 key={article.id}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="group p-6 rounded-xl bg-datasea-dark/50 border border-datasea-border hover:border-datasea-cyan/30 transition-all duration-300"
+                                className="group overflow-hidden rounded-xl bg-datasea-dark/50 border border-datasea-border hover:border-datasea-cyan/30 transition-all duration-300"
                             >
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="p-2 rounded-lg bg-datasea-cyan/10 text-datasea-cyan">
-                                        <article.icon className="w-5 h-5" />
-                                    </div>
-                                    <span className="text-xs font-medium text-datasea-muted">
-                                        {article.category}
-                                    </span>
+                                <div className="aspect-video overflow-hidden">
+                                    <img 
+                                        src={article.image} 
+                                        alt={article.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
                                 </div>
-                                <h3 className="text-lg font-semibold mb-3 group-hover:text-datasea-cyan transition-colors line-clamp-2">
-                                    {article.title}
-                                </h3>
-                                <p className="text-sm text-datasea-muted mb-4 line-clamp-2">
-                                    {article.excerpt}
-                                </p>
-                                <div className="flex items-center justify-between text-xs text-datasea-muted">
-                                    <span>{new Date(article.date).toLocaleDateString('fr-FR')}</span>
-                                    <span>{article.readTime}</span>
+                                <div className="p-5">
+                                    <div className="flex items-center gap-3 mb-3">
+                                        <div className="p-1.5 rounded-md bg-datasea-cyan/10 text-datasea-cyan">
+                                            <article.icon className="w-4 h-4" />
+                                        </div>
+                                        <span className="text-xs font-medium text-datasea-muted">
+                                            {article.category}
+                                        </span>
+                                    </div>
+                                    <h3 className="text-base font-semibold mb-2 group-hover:text-datasea-cyan transition-colors line-clamp-2">
+                                        {article.title}
+                                    </h3>
+                                    <p className="text-sm text-datasea-muted mb-3 line-clamp-2">
+                                        {article.excerpt}
+                                    </p>
+                                    <div className="flex items-center justify-between text-xs text-datasea-muted">
+                                        <span>{new Date(article.date).toLocaleDateString('fr-FR')}</span>
+                                        <span>{article.readTime}</span>
+                                    </div>
                                 </div>
                             </motion.article>
                         ))}
