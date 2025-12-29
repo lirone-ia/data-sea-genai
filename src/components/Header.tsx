@@ -20,6 +20,7 @@ const Header = () => {
         { name: 'Industries', to: '/industries' },
         { name: 'Technologies', to: '/technologies' },
         { name: 'Case Studies', to: '/case-studies' },
+        { name: 'Actualités', to: '/news' },
         { name: 'About', to: '/about' },
     ];
 
