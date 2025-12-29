@@ -1,90 +1,81 @@
 import { motion } from 'framer-motion';
-import { Calendar, ArrowRight, TrendingUp, Database, Brain, Shield, Cloud, Zap } from 'lucide-react';
+import { Calendar, ArrowRight, TrendingUp, Database, Brain, Shield, Cloud, Zap, ExternalLink } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import aiGenerativeImg from '@/assets/news/ai-generative.jpg';
-import dataMeshImg from '@/assets/news/data-mesh.jpg';
-import cloudSecurityImg from '@/assets/news/cloud-security.jpg';
-import streamingImg from '@/assets/news/streaming.jpg';
-import mlopsImg from '@/assets/news/mlops.jpg';
-import cloudMigrationImg from '@/assets/news/cloud-migration.jpg';
+import awsNovaImg from '@/assets/news/aws-nova.jpg';
+import microsoftFabricImg from '@/assets/news/microsoft-fabric.jpg';
+import duckdbLakeImg from '@/assets/news/duckdb-lake.jpg';
+import cyberSecurityAlertImg from '@/assets/news/cyber-security-alert.jpg';
 
-const newsArticles = [
+interface NewsArticle {
+    id: number;
+    title: string;
+    excerpt: string;
+    date: string;
+    category: string;
+    icon: React.ComponentType<{ className?: string }>;
+    image: string;
+    readTime: string;
+    featured: boolean;
+    externalLink?: string;
+}
+
+const newsArticles: NewsArticle[] = [
     {
         id: 1,
-        title: "L'essor de l'IA Générative dans l'Entreprise",
-        excerpt: "Comment les LLMs transforment les processus métiers et créent de nouvelles opportunités de valeur pour les organisations.",
-        date: "2024-12-15",
+        title: "AWS lance sa nouvelle famille de modèles d'IA : Amazon Nova",
+        excerpt: "Amazon a dévoilé ses modèles Nova capables de traiter du texte, des images et des vidéos avec une vitesse inédite lors de AWS re:Invent 2025.",
+        date: "2025-12-20",
         category: "Intelligence Artificielle",
         icon: Brain,
-        image: aiGenerativeImg,
-        readTime: "5 min",
-        featured: true
+        image: awsNovaImg,
+        readTime: "4 min",
+        featured: true,
+        externalLink: "https://www.aboutamazon.com"
     },
     {
         id: 2,
-        title: "Data Mesh : Architecture Décentralisée pour l'Échelle",
-        excerpt: "Découvrez comment l'approche Data Mesh révolutionne la gouvernance des données en distribuant la responsabilité aux équipes domaines.",
-        date: "2024-12-10",
-        category: "Architecture Data",
-        icon: Database,
-        image: dataMeshImg,
-        readTime: "7 min",
-        featured: true
+        title: "Microsoft Fabric dépasse les 28 000 entreprises clientes",
+        excerpt: "La plateforme unifiée de Microsoft continue de dominer le marché de l'analyse de données avec de nouvelles fonctions en temps réel.",
+        date: "2025-12-18",
+        category: "Cloud",
+        icon: Cloud,
+        image: microsoftFabricImg,
+        readTime: "5 min",
+        featured: true,
+        externalLink: "https://learn.microsoft.com"
     },
     {
         id: 3,
-        title: "Sécurité des Données Cloud : Tendances 2025",
-        excerpt: "Les nouvelles menaces et les meilleures pratiques pour protéger vos données dans un environnement multi-cloud.",
-        date: "2024-12-05",
-        category: "Sécurité",
-        icon: Shield,
-        image: cloudSecurityImg,
+        title: "L'écosystème DuckDB s'étend avec \"DuckLake\"",
+        excerpt: "DuckDB devient la solution de référence pour le traitement de données ultra-rapide directement dans le navigateur.",
+        date: "2025-12-15",
+        category: "Data Engineering",
+        icon: Database,
+        image: duckdbLakeImg,
         readTime: "6 min",
-        featured: false
+        featured: false,
+        externalLink: "https://duckdb.org"
     },
     {
         id: 4,
-        title: "Real-Time Analytics avec Apache Kafka et Flink",
-        excerpt: "Implémentation d'une architecture de streaming pour l'analyse en temps réel des données opérationnelles.",
-        date: "2024-11-28",
-        category: "Data Engineering",
-        icon: Zap,
-        image: streamingImg,
-        readTime: "8 min",
-        featured: false
-    },
-    {
-        id: 5,
-        title: "MLOps : Industrialiser le Machine Learning",
-        excerpt: "Les pratiques DevOps appliquées au ML pour accélérer le déploiement et la maintenance des modèles en production.",
-        date: "2024-11-20",
-        category: "MLOps",
-        icon: TrendingUp,
-        image: mlopsImg,
-        readTime: "6 min",
-        featured: false
-    },
-    {
-        id: 6,
-        title: "Migration Cloud : Stratégies et Pièges à Éviter",
-        excerpt: "Guide complet pour réussir votre migration vers le cloud sans interruption de service ni perte de données.",
-        date: "2024-11-15",
-        category: "Cloud",
-        icon: Cloud,
-        image: cloudMigrationImg,
-        readTime: "10 min",
-        featured: false
+        title: "Alerte cybersécurité au Ministère de l'Intérieur",
+        excerpt: "Une intrusion massive a forcé le gouvernement français à renforcer d'urgence la protection des données sensibles de l'État.",
+        date: "2025-12-10",
+        category: "Sécurité",
+        icon: Shield,
+        image: cyberSecurityAlertImg,
+        readTime: "7 min",
+        featured: false,
+        externalLink: "https://www.aa.com.tr"
     }
 ];
 
 const categories = [
     "Tous",
     "Intelligence Artificielle",
-    "Architecture Data",
     "Data Engineering",
-    "MLOps",
     "Sécurité",
     "Cloud"
 ];
@@ -185,9 +176,20 @@ const News = () => {
                                             </span>
                                             <span>{article.readTime} de lecture</span>
                                         </div>
-                                        <button className="flex items-center gap-2 text-datasea-cyan hover:gap-3 transition-all">
-                                            Lire <ArrowRight className="w-4 h-4" />
-                                        </button>
+                                        {article.externalLink ? (
+                                            <a 
+                                                href={article.externalLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center gap-2 text-datasea-cyan hover:gap-3 transition-all"
+                                            >
+                                                Lire <ExternalLink className="w-4 h-4" />
+                                            </a>
+                                        ) : (
+                                            <button className="flex items-center gap-2 text-datasea-cyan hover:gap-3 transition-all">
+                                                Lire <ArrowRight className="w-4 h-4" />
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
                             </motion.article>
