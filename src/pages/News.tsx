@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Calendar, ArrowRight, TrendingUp, Database, Brain, Shield, Cloud, Zap, ExternalLink } from 'lucide-react';
+import { Calendar, ArrowRight, Database, Brain, Shield, Cloud, ExternalLink, Video, Cpu, Snowflake, Leaf } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -7,6 +7,12 @@ import awsNovaImg from '@/assets/news/aws-nova.jpg';
 import microsoftFabricImg from '@/assets/news/microsoft-fabric.jpg';
 import duckdbLakeImg from '@/assets/news/duckdb-lake.jpg';
 import cyberSecurityAlertImg from '@/assets/news/cyber-security-alert.jpg';
+import openaiSoraImg from '@/assets/news/openai-sora.jpg';
+import mistralAiImg from '@/assets/news/mistral-ai.jpg';
+import databricksMosaicImg from '@/assets/news/databricks-mosaic.jpg';
+import snowflakeCortexImg from '@/assets/news/snowflake-cortex.jpg';
+import applePrivateCloudImg from '@/assets/news/apple-private-cloud.jpg';
+import liquidCoolingImg from '@/assets/news/liquid-cooling.jpg';
 
 interface NewsArticle {
     id: number;
@@ -24,18 +30,90 @@ interface NewsArticle {
 const newsArticles: NewsArticle[] = [
     {
         id: 1,
+        title: "OpenAI généralise l'accès à Sora pour la création vidéo",
+        excerpt: "Le modèle Sora redéfinit la génération de vidéos à partir de texte, ouvrant de nouvelles opportunités pour les créateurs de contenu data-driven.",
+        date: "2025-12-28",
+        category: "Intelligence Artificielle",
+        icon: Video,
+        image: openaiSoraImg,
+        readTime: "5 min",
+        featured: true,
+        externalLink: "https://www.youtube.com"
+    },
+    {
+        id: 2,
+        title: "Mistral AI : Le champion français renforce ses modèles multilingues",
+        excerpt: "L'entreprise parisienne continue de concurrencer les géants américains avec des modèles open-source de plus en plus performants et économes en ressources.",
+        date: "2025-12-27",
+        category: "Intelligence Artificielle",
+        icon: Brain,
+        image: mistralAiImg,
+        readTime: "6 min",
+        featured: true,
+        externalLink: "https://datascientest.com"
+    },
+    {
+        id: 3,
+        title: "Databricks déploie Mosaic AI pour la gouvernance des données",
+        excerpt: "Grâce à Mosaic AI, Databricks permet désormais aux entreprises de construire et de surveiller leurs propres agents IA directement au sein de leur Lakehouse.",
+        date: "2025-12-26",
+        category: "Data Engineering",
+        icon: Database,
+        image: databricksMosaicImg,
+        readTime: "7 min",
+        featured: false,
+        externalLink: "https://www.databricks.com"
+    },
+    {
+        id: 4,
+        title: "Snowflake Cortex : L'IA générative s'intègre au langage SQL",
+        excerpt: "Snowflake simplifie l'accès à l'IA en permettant aux analystes de données d'utiliser des modèles de langage directement via des requêtes SQL classiques.",
+        date: "2025-12-25",
+        category: "Cloud",
+        icon: Snowflake,
+        image: snowflakeCortexImg,
+        readTime: "5 min",
+        featured: false,
+        externalLink: "https://blog.nashtechglobal.com"
+    },
+    {
+        id: 5,
+        title: "Apple Intelligence et la sécurité \"Private Cloud Compute\"",
+        excerpt: "Apple définit un nouveau standard de confidentialité avec des serveurs dédiés qui garantissent que les données personnelles ne sont jamais stockées ni accessibles.",
+        date: "2025-12-24",
+        category: "Sécurité",
+        icon: Shield,
+        image: applePrivateCloudImg,
+        readTime: "6 min",
+        featured: false,
+        externalLink: "https://security.apple.com"
+    },
+    {
+        id: 6,
+        title: "L'essor du refroidissement liquide pour des Data Centers durables",
+        excerpt: "Face à la consommation énergétique de l'IA, les centres de données adoptent massivement le refroidissement liquide pour réduire leur empreinte carbone.",
+        date: "2025-12-23",
+        category: "Green IT",
+        icon: Leaf,
+        image: liquidCoolingImg,
+        readTime: "8 min",
+        featured: false,
+        externalLink: "https://www.tetratech.com"
+    },
+    {
+        id: 7,
         title: "AWS lance sa nouvelle famille de modèles d'IA : Amazon Nova",
         excerpt: "Amazon a dévoilé ses modèles Nova capables de traiter du texte, des images et des vidéos avec une vitesse inédite lors de AWS re:Invent 2025.",
         date: "2025-12-20",
         category: "Intelligence Artificielle",
-        icon: Brain,
+        icon: Cpu,
         image: awsNovaImg,
         readTime: "4 min",
-        featured: true,
+        featured: false,
         externalLink: "https://www.aboutamazon.com"
     },
     {
-        id: 2,
+        id: 8,
         title: "Microsoft Fabric dépasse les 28 000 entreprises clientes",
         excerpt: "La plateforme unifiée de Microsoft continue de dominer le marché de l'analyse de données avec de nouvelles fonctions en temps réel.",
         date: "2025-12-18",
@@ -43,11 +121,11 @@ const newsArticles: NewsArticle[] = [
         icon: Cloud,
         image: microsoftFabricImg,
         readTime: "5 min",
-        featured: true,
+        featured: false,
         externalLink: "https://learn.microsoft.com"
     },
     {
-        id: 3,
+        id: 9,
         title: "L'écosystème DuckDB s'étend avec \"DuckLake\"",
         excerpt: "DuckDB devient la solution de référence pour le traitement de données ultra-rapide directement dans le navigateur.",
         date: "2025-12-15",
@@ -59,7 +137,7 @@ const newsArticles: NewsArticle[] = [
         externalLink: "https://duckdb.org"
     },
     {
-        id: 4,
+        id: 10,
         title: "Alerte cybersécurité au Ministère de l'Intérieur",
         excerpt: "Une intrusion massive a forcé le gouvernement français à renforcer d'urgence la protection des données sensibles de l'État.",
         date: "2025-12-10",
@@ -76,8 +154,9 @@ const categories = [
     "Tous",
     "Intelligence Artificielle",
     "Data Engineering",
+    "Cloud",
     "Sécurité",
-    "Cloud"
+    "Green IT"
 ];
 
 const News = () => {
