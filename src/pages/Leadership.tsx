@@ -5,72 +5,77 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { 
-  Target, 
+  Brain, 
   Shield, 
-  Globe, 
-  Cpu, 
-  Users, 
-  Zap, 
+  BarChart3, 
+  Sparkles, 
+  Activity, 
+  Layers,
   Award,
   ArrowRight,
-  Quote
+  Quote,
+  Target,
+  Scale
 } from "lucide-react";
 
 const Leadership = () => {
   const ambitions = [
     {
-      icon: Cpu,
-      title: "Advanced MLOps & Governance",
-      description: "Solving the 'last mile' problem of AI with repeatable, monitored releases that adhere to strict SLAs—moving from experimental silos to industrialized production."
+      icon: Brain,
+      title: "NLP & Semantic Understanding",
+      description: "Pioneering the use of Vector Search and Retrieval-Augmented Generation (RAG) to create AI that doesn't just 'guess,' but 'knows' based on a governed source of truth."
     },
     {
-      icon: Globe,
-      title: "Multi-Cloud Orchestration",
-      description: "Championing portable and resilient platforms to prevent vendor lock-in, enabling enterprises to deploy AI across AWS, GCP, or Azure with seamless consistency."
+      icon: BarChart3,
+      title: "Behavioral Data Science",
+      description: "Developing complex Customer Segmentation and CLV models, moving beyond simple correlation to causal inference—predicting and influencing future customer behavior with surgical precision."
     },
     {
-      icon: Zap,
-      title: "Low-Latency Intelligence",
-      description: "Pushing the boundaries of real-time streaming and stateful processing, ensuring clients can act on data the moment it is generated."
+      icon: Shield,
+      title: "Trustworthy AI (Safety & Guardrails)",
+      description: "Advocating for transparency with toxicity filtering, intent modeling, and evaluation harnesses to ensure AI outputs are safe, ethical, and compliant."
     }
   ];
 
   const futureProjects = [
     {
-      title: "Grounded LLM Platforms",
-      description: "Developing retrieval pipelines that provide auditable citations and safety guardrails, turning 'black box' AI into transparent, trustworthy business partners."
+      icon: Sparkles,
+      title: "Production-Grade LLM Pipelines",
+      description: "Designing systems that can handle millisecond-level inference for Large Language Models while maintaining 'exactly-once' semantics and stateful processing."
     },
     {
-      title: "Autonomous AI Platforms",
-      description: "Self-healing infrastructure where MLOps pipelines automatically detect drift and retrain models without human intervention, ensuring 24/7 reliability."
+      icon: Activity,
+      title: "Streaming Data Science",
+      description: "Moving from batch processing to Real-Time Inference—AI that learns and adapts to data streams as they happen, providing immediate insights for fraud detection or dynamic pricing."
     },
     {
-      title: "Senior-Emerging Talent Hybrid",
-      description: "Building 'blended teams' that pair senior architectural wisdom with emerging engineering talent to foster transparent delivery and rapid innovation."
+      icon: Layers,
+      title: "Advanced Embeddings & Multi-modal AI",
+      description: "Fusing voice analytics, text, and structured data into a unified embedding space to provide a 360-degree cognitive view of business operations."
     }
   ];
 
-  const whyHerVision = [
+  const whyUnique = [
     {
       icon: Award,
-      title: "Unmatched Perspective",
-      description: "A career built on long-term tech cycles, providing a steady hand in a volatile AI market."
+      title: "Deep Historical Context",
+      description: "A unique ability to combine 'classical' statistical methods with 'cutting-edge' Deep Learning."
     },
     {
       icon: Target,
-      title: "Engineering Rigor",
-      description: "A focus on 'Core Engineering Capabilities' over marketing trends."
+      title: "Focus on Grounded Truth",
+      description: "An obsession with auditable citations and reducing 'hallucinations' in enterprise AI."
     },
     {
-      icon: Shield,
-      title: "Global Compliance",
-      description: "Navigating complex regulatory landscapes with 'fine-grained access policies' and 'audit trails' at the heart of every solution."
+      icon: Scale,
+      title: "Scale-First Mentality",
+      description: "Ensuring that Data Science solutions are built on 'portable, resilient platforms' that avoid vendor lock-in."
     }
   ];
 
   const technologies = [
-    "Kubernetes", "Terraform", "PyTorch", "Apache Kafka", 
-    "Snowflake", "Databricks", "MLflow", "Kubeflow"
+    "PyTorch", "TensorFlow", "Scikit-learn", "Hugging Face", 
+    "LangChain", "Vector DBs", "Apache Spark", "Ray"
   ];
 
   return (
@@ -101,7 +106,7 @@ const Leadership = () => {
               CEO & Founder of DataSea
             </p>
             <p className="text-lg text-datasea-300">
-              Engineering Excellence in the Age of Industrialized AI
+              Strategic Data Science & The Future of Algorithmic Intelligence
             </p>
           </motion.div>
         </div>
@@ -118,16 +123,20 @@ const Leadership = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl font-bold text-foreground mb-8">
-                A Vision of Reliability: Beyond the AI Hype
+                A Vision of "Science in Production"
               </h2>
               
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
                 <p>
-                  For Lili Der Stepani, the true value of Artificial Intelligence does not lie in the "magic" of the model, but in the <strong className="text-foreground">robustness of the infrastructure</strong> that supports it. With a career spanning decades of technological shifts, Lili has built DataSea on a foundational belief: <em>AI is only as good as its orchestration.</em>
+                  For Lili Der Stepani, Data Science is not just about building models—it is about the <strong className="text-foreground">mathematical rigor</strong> required to solve real-world enterprise challenges. Born in 1955, Lili bridges the gap between foundational statistical science and the modern era of Generative AI.
                 </p>
                 
                 <p>
-                  Born in 1955, Lili brings a rare depth of perspective to the modern AI landscape. She has witnessed the evolution from monolithic systems to decentralized clouds, allowing her to lead DataSea with a focus on <strong className="text-foreground">"Stability at Scale"</strong>—ensuring that Large Language Models (LLMs) and Machine Learning pipelines move out of the lab and into mission-critical production environments.
+                  Her vision is clear: moving Data Science from "experimental notebooks" to <strong className="text-foreground">high-performance, low-latency production engines</strong>.
+                </p>
+
+                <p>
+                  She founded DataSea to address the critical gap in the industry: the need for sophisticated AI models that are actually <em>grounded in business reality</em>, auditable, and capable of processing billions of data points in real time.
                 </p>
               </div>
             </motion.div>
@@ -147,7 +156,7 @@ const Leadership = () => {
           >
             <Quote className="w-12 h-12 text-datasea-400 mx-auto mb-6" />
             <blockquote className="text-2xl md:text-3xl font-medium text-foreground italic mb-6">
-              "AI is no longer a luxury; it is the new infrastructure of global business. My mission with DataSea is to ensure this infrastructure is as reliable, scalable, and governed as the power grids that run our cities."
+              "Data Science is the bridge between raw information and human wisdom. At DataSea, we don't just build models; we build the intelligence that allows companies to see the future before it happens."
             </blockquote>
             <p className="text-datasea-600 dark:text-datasea-400 font-semibold">
               — Lili Der Stepani
@@ -167,10 +176,10 @@ const Leadership = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-foreground mb-4">
-              Ambitions: Orchestrating the Future of MLOps
+              Ambitions: From Predictive Analytics to Generative Intelligence
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Lili's strategic ambition is to make DataSea the global gold standard for Enterprise-ready AI Engineering. Under her leadership, the firm focuses on the "plumbing" of intelligence—the invisible but vital systems that allow AI to scale safely and cost-effectively.
+              Lili's strategic ambition is to transform DataSea into the premier lab for Advanced AI Engineering. She is pushing the boundaries of how machines perceive and process information through three core pillars.
             </p>
           </motion.div>
 
@@ -213,10 +222,10 @@ const Leadership = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold mb-4">
-              Future Projects: Leading the Next Frontier of Tech
+              Future Projects: The Next Frontier of Cognitive Engineering
             </h2>
             <p className="text-lg text-datasea-200 max-w-3xl mx-auto">
-              Looking toward the next decade, Lili Der Stepani is steering DataSea toward the frontiers of Agentic Workflows and Secure RAG (Retrieval-Augmented Generation).
+              Looking ahead, Lili Der Stepani is steering DataSea toward the next generation of Data Science innovations.
             </p>
           </motion.div>
 
@@ -230,6 +239,9 @@ const Leadership = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-datasea-800/50 backdrop-blur-sm rounded-xl p-6 border border-datasea-700"
               >
+                <div className="w-10 h-10 bg-datasea-700 rounded-lg flex items-center justify-center mb-4">
+                  <project.icon className="w-5 h-5 text-datasea-300" />
+                </div>
                 <h3 className="text-xl font-semibold text-white mb-3">
                   {project.title}
                 </h3>
@@ -253,16 +265,16 @@ const Leadership = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl font-bold text-foreground mb-8">
-                Leadership Philosophy: "Outcome-First, Security-by-Design"
+                Leadership Philosophy: "The Rigor of Science, the Speed of Tech"
               </h2>
               
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
                 <p>
-                  Lili leads with a pragmatic, engineering-first mindset. For her, technology is a means to an end: a measurable KPI, a reduced churn rate, or a lifted Life-Time Value (LTV).
+                  Lili leads with an <strong className="text-foreground">"Outcome-First" mindset</strong>. She believes that the most complex algorithm is useless if it doesn't deliver a measurable KPI.
                 </p>
                 
                 <p>
-                  She ensures that every project at DataSea starts with <strong className="text-foreground">security-by-design</strong>, prioritizing encryption, auditability, and privacy from the first line of code.
+                  At DataSea, she fosters a culture where <strong className="text-foreground">PhD-level research meets agile engineering</strong>—ensuring that every data experiment leads to a concrete business result.
                 </p>
               </div>
             </motion.div>
@@ -270,7 +282,7 @@ const Leadership = () => {
         </div>
       </section>
 
-      {/* Why Her Vision Section */}
+      {/* Why Unique Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <motion.div
@@ -281,12 +293,12 @@ const Leadership = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-foreground mb-4">
-              Why Her Vision Defines DataSea
+              Why Her Data Science Vision is Unique
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {whyHerVision.map((item, index) => (
+            {whyUnique.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -321,7 +333,7 @@ const Leadership = () => {
             className="text-center"
           >
             <h3 className="text-xl font-semibold text-foreground mb-6">
-              Selected Technologies Aligned with Lili's Vision
+              Core Data Science Technologies
             </h3>
             <div className="flex flex-wrap justify-center gap-3 mb-8">
               {technologies.map((tech, index) => (
@@ -358,7 +370,7 @@ const Leadership = () => {
               Ready to Work with DataSea?
             </h2>
             <p className="text-xl text-datasea-100 mb-8 max-w-2xl mx-auto">
-              Join us in building the future of enterprise-ready AI infrastructure.
+              Join us in building the future of enterprise-ready AI and Data Science.
             </p>
             <Link
               to="/contact"
