@@ -30,10 +30,10 @@ interface NewsArticle {
 const newsArticles: NewsArticle[] = [
     {
         id: 1,
-        title: "OpenAI généralise l'accès à Sora pour la création vidéo",
-        excerpt: "Le modèle Sora redéfinit la génération de vidéos à partir de texte, ouvrant de nouvelles opportunités pour les créateurs de contenu data-driven.",
+        title: "OpenAI Expands Access to Sora for Video Creation",
+        excerpt: "The Sora model redefines video generation from text, opening new opportunities for data-driven content creators.",
         date: "2025-12-28",
-        category: "Intelligence Artificielle",
+        category: "Artificial Intelligence",
         icon: Video,
         image: openaiSoraImg,
         readTime: "5 min",
@@ -42,10 +42,10 @@ const newsArticles: NewsArticle[] = [
     },
     {
         id: 2,
-        title: "Mistral AI : Le champion français renforce ses modèles multilingues",
-        excerpt: "L'entreprise parisienne continue de concurrencer les géants américains avec des modèles open-source de plus en plus performants et économes en ressources.",
+        title: "Mistral AI: The French Champion Strengthens Its Multilingual Models",
+        excerpt: "The Parisian company continues to compete with American giants with increasingly powerful and resource-efficient open-source models.",
         date: "2025-12-27",
-        category: "Intelligence Artificielle",
+        category: "Artificial Intelligence",
         icon: Brain,
         image: mistralAiImg,
         readTime: "6 min",
@@ -54,8 +54,8 @@ const newsArticles: NewsArticle[] = [
     },
     {
         id: 3,
-        title: "Databricks déploie Mosaic AI pour la gouvernance des données",
-        excerpt: "Grâce à Mosaic AI, Databricks permet désormais aux entreprises de construire et de surveiller leurs propres agents IA directement au sein de leur Lakehouse.",
+        title: "Databricks Deploys Mosaic AI for Data Governance",
+        excerpt: "With Mosaic AI, Databricks now enables enterprises to build and monitor their own AI agents directly within their Lakehouse.",
         date: "2025-12-26",
         category: "Data Engineering",
         icon: Database,
@@ -66,8 +66,8 @@ const newsArticles: NewsArticle[] = [
     },
     {
         id: 4,
-        title: "Snowflake Cortex : L'IA générative s'intègre au langage SQL",
-        excerpt: "Snowflake simplifie l'accès à l'IA en permettant aux analystes de données d'utiliser des modèles de langage directement via des requêtes SQL classiques.",
+        title: "Snowflake Cortex: Generative AI Integrates with SQL",
+        excerpt: "Snowflake simplifies AI access by allowing data analysts to use language models directly through classic SQL queries.",
         date: "2025-12-25",
         category: "Cloud",
         icon: Snowflake,
@@ -78,10 +78,10 @@ const newsArticles: NewsArticle[] = [
     },
     {
         id: 5,
-        title: "Apple Intelligence et la sécurité \"Private Cloud Compute\"",
-        excerpt: "Apple définit un nouveau standard de confidentialité avec des serveurs dédiés qui garantissent que les données personnelles ne sont jamais stockées ni accessibles.",
+        title: "Apple Intelligence and 'Private Cloud Compute' Security",
+        excerpt: "Apple sets a new privacy standard with dedicated servers that guarantee personal data is never stored or accessed.",
         date: "2025-12-24",
-        category: "Sécurité",
+        category: "Security",
         icon: Shield,
         image: applePrivateCloudImg,
         readTime: "6 min",
@@ -90,8 +90,8 @@ const newsArticles: NewsArticle[] = [
     },
     {
         id: 6,
-        title: "L'essor du refroidissement liquide pour des Data Centers durables",
-        excerpt: "Face à la consommation énergétique de l'IA, les centres de données adoptent massivement le refroidissement liquide pour réduire leur empreinte carbone.",
+        title: "The Rise of Liquid Cooling for Sustainable Data Centers",
+        excerpt: "Facing the energy consumption of AI, data centers are massively adopting liquid cooling to reduce their carbon footprint.",
         date: "2025-12-23",
         category: "Green IT",
         icon: Leaf,
@@ -102,10 +102,10 @@ const newsArticles: NewsArticle[] = [
     },
     {
         id: 7,
-        title: "AWS lance sa nouvelle famille de modèles d'IA : Amazon Nova",
-        excerpt: "Amazon a dévoilé ses modèles Nova capables de traiter du texte, des images et des vidéos avec une vitesse inédite lors de AWS re:Invent 2025.",
+        title: "AWS Launches Its New Family of AI Models: Amazon Nova",
+        excerpt: "Amazon unveiled its Nova models capable of processing text, images, and videos with unprecedented speed at AWS re:Invent 2025.",
         date: "2025-12-20",
-        category: "Intelligence Artificielle",
+        category: "Artificial Intelligence",
         icon: Cpu,
         image: awsNovaImg,
         readTime: "4 min",
@@ -114,8 +114,8 @@ const newsArticles: NewsArticle[] = [
     },
     {
         id: 8,
-        title: "Microsoft Fabric dépasse les 28 000 entreprises clientes",
-        excerpt: "La plateforme unifiée de Microsoft continue de dominer le marché de l'analyse de données avec de nouvelles fonctions en temps réel.",
+        title: "Microsoft Fabric Surpasses 28,000 Enterprise Customers",
+        excerpt: "Microsoft's unified platform continues to dominate the data analytics market with new real-time features.",
         date: "2025-12-18",
         category: "Cloud",
         icon: Cloud,
@@ -126,8 +126,8 @@ const newsArticles: NewsArticle[] = [
     },
     {
         id: 9,
-        title: "L'écosystème DuckDB s'étend avec \"DuckLake\"",
-        excerpt: "DuckDB devient la solution de référence pour le traitement de données ultra-rapide directement dans le navigateur.",
+        title: "The DuckDB Ecosystem Expands with 'DuckLake'",
+        excerpt: "DuckDB becomes the go-to solution for ultra-fast data processing directly in the browser.",
         date: "2025-12-15",
         category: "Data Engineering",
         icon: Database,
@@ -138,10 +138,10 @@ const newsArticles: NewsArticle[] = [
     },
     {
         id: 10,
-        title: "Alerte cybersécurité au Ministère de l'Intérieur",
-        excerpt: "Une intrusion massive a forcé le gouvernement français à renforcer d'urgence la protection des données sensibles de l'État.",
+        title: "Cybersecurity Alert at the Ministry of Interior",
+        excerpt: "A massive intrusion forced the French government to urgently strengthen the protection of sensitive state data.",
         date: "2025-12-10",
-        category: "Sécurité",
+        category: "Security",
         icon: Shield,
         image: cyberSecurityAlertImg,
         readTime: "7 min",
@@ -151,11 +151,11 @@ const newsArticles: NewsArticle[] = [
 ];
 
 const categories = [
-    "Tous",
-    "Intelligence Artificielle",
+    "All",
+    "Artificial Intelligence",
     "Data Engineering",
     "Cloud",
-    "Sécurité",
+    "Security",
     "Green IT"
 ];
 
@@ -178,10 +178,10 @@ const News = () => {
                         className="text-center max-w-4xl mx-auto"
                     >
                         <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                            Actualités <span className="bg-clip-text text-transparent bg-gradient-to-r from-datasea-cyan to-datasea-blue">Data</span>
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-datasea-cyan to-datasea-blue">Data</span> News
                         </h1>
                         <p className="text-xl text-datasea-muted">
-                            Restez informé des dernières tendances en data engineering, IA et cloud computing
+                            Stay informed on the latest trends in data engineering, AI, and cloud computing
                         </p>
                     </motion.div>
                 </div>
@@ -210,7 +210,7 @@ const News = () => {
             {/* Featured Articles */}
             <section className="py-16">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-2xl font-bold mb-8">À la Une</h2>
+                    <h2 className="text-2xl font-bold mb-8">Featured</h2>
                     <div className="grid md:grid-cols-2 gap-8">
                         {featuredArticles.map((article, index) => (
                             <motion.article
@@ -247,13 +247,13 @@ const News = () => {
                                         <div className="flex items-center gap-4 text-sm text-datasea-muted">
                                             <span className="flex items-center gap-1">
                                                 <Calendar className="w-4 h-4" />
-                                                {new Date(article.date).toLocaleDateString('fr-FR', { 
+                                                {new Date(article.date).toLocaleDateString('en-US', { 
                                                     day: 'numeric',
                                                     month: 'long',
                                                     year: 'numeric'
                                                 })}
                                             </span>
-                                            <span>{article.readTime} de lecture</span>
+                                            <span>{article.readTime} read</span>
                                         </div>
                                         {article.externalLink ? (
                                             <a 
@@ -262,11 +262,11 @@ const News = () => {
                                                 rel="noopener noreferrer"
                                                 className="flex items-center gap-2 text-datasea-cyan hover:gap-3 transition-all"
                                             >
-                                                Lire <ExternalLink className="w-4 h-4" />
+                                                Read <ExternalLink className="w-4 h-4" />
                                             </a>
                                         ) : (
                                             <button className="flex items-center gap-2 text-datasea-cyan hover:gap-3 transition-all">
-                                                Lire <ArrowRight className="w-4 h-4" />
+                                                Read <ArrowRight className="w-4 h-4" />
                                             </button>
                                         )}
                                     </div>
@@ -280,7 +280,7 @@ const News = () => {
             {/* All Articles */}
             <section className="py-16 bg-datasea-navy/30">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-2xl font-bold mb-8">Tous les Articles</h2>
+                    <h2 className="text-2xl font-bold mb-8">All Articles</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {regularArticles.map((article, index) => (
                             <motion.article
@@ -313,7 +313,7 @@ const News = () => {
                                         {article.excerpt}
                                     </p>
                                     <div className="flex items-center justify-between text-xs text-datasea-muted">
-                                        <span>{new Date(article.date).toLocaleDateString('fr-FR')}</span>
+                                        <span>{new Date(article.date).toLocaleDateString('en-US')}</span>
                                         <span>{article.readTime}</span>
                                     </div>
                                 </div>
@@ -327,18 +327,18 @@ const News = () => {
             <section className="py-20">
                 <div className="container mx-auto px-6">
                     <div className="max-w-3xl mx-auto text-center p-12 rounded-3xl bg-gradient-to-br from-datasea-blue/20 to-datasea-cyan/10 border border-datasea-border">
-                        <h2 className="text-3xl font-bold mb-4">Restez Informé</h2>
+                        <h2 className="text-3xl font-bold mb-4">Stay Informed</h2>
                         <p className="text-datasea-muted mb-8">
-                            Recevez les dernières actualités data directement dans votre boîte mail
+                            Get the latest data news delivered straight to your inbox
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                             <input
                                 type="email"
-                                placeholder="votre@email.com"
+                                placeholder="your@email.com"
                                 className="flex-1 px-6 py-3 rounded-full bg-datasea-dark border border-datasea-border focus:border-datasea-cyan focus:outline-none transition-colors"
                             />
                             <button className="px-8 py-3 bg-datasea-blue hover:bg-datasea-cyan text-white font-medium rounded-full transition-all duration-300">
-                                S'abonner
+                                Subscribe
                             </button>
                         </div>
                     </div>
